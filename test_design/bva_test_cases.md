@@ -30,7 +30,7 @@ Technique coverage:
 | `TC-BVA-017` | `BC-008` | Safe Withdrawal (`/safe-withdrawal`) | Withdrawal Rate (%) | `-0.1%` | **Below** | Reject negative withdrawal percentage | Red banner: "Phase 1 withdrawal rate must be between 0% and 100%" | **Pass** |
 | `TC-BVA-018` | `BC-008` | Safe Withdrawal (`/safe-withdrawal`) | Withdrawal Rate (%) | `0.0%` | **At** | Accept zero withdrawal rate (capital preservation) | Red banner: "Phase 1 withdrawal rate must be between 0% and 100%" | **Pass** |
 | `TC-BVA-019` | `BC-009` | Contact Form (`/contact`) | Message Length | `9 chars` (`"123456789"`) | **Below** | Reject message under 10 chars | Red banner: "Message must be at least 10 characters." | **Pass** |
-| `TC-BVA-020` | `BC-009` | Contact Form (`/contact`) | Message Length | `10 chars` (`"1234567890"`) | **At** | Accept exact minimum 10 char message | Pending Execution | Not Executed |
+| `TC-BVA-020` | `BC-009` | Contact Form (`/contact`) | Message Length | `10 chars` (`"1234567890"`) | **At** | Accept exact minimum 10 char message | Valid message length at boundary (10 chars) accepted; form submitted successfully with green confirmation banner: "Message sent. We will get back to you soon." | **Pass** |
 | `TC-BVA-021` | `BC-010` | Contact Form (`/contact`) | Message Length | `5,000 chars` | **At** | Accept exact maximum 5,000 char message | Pending Execution | Not Executed |
 | `TC-BVA-022` | `BC-010` | Contact Form (`/contact`) | Message Length | `5,001 chars` | **Above** | Reject message exceeding 5,000 chars | Pending Execution | Not Executed |
 | `TC-BVA-023` | `BC-011` | Contact Form (`/contact`) | Subject Length | `120 chars` | **At** | Accept exact maximum 120 char subject | Pending Execution | Not Executed |

@@ -3,9 +3,9 @@
 This matrix provides complete, bidirectional traceability linking every test case from Deliverable D2 (Equivalence Partitioning) and Deliverable D3 (Boundary Value Analysis) to its target form, input field, testing technique, equivalence class / boundary ID, execution status, and verdict.
 
 - **Total Test Cases Designed**: 109 (77 EP Test Cases + 32 BVA Test Cases).
-- **Executed Test Cases (Backed by Authentic Screenshots)**: 56 test cases passed across all 11 forms.
+- **Executed Test Cases (Backed by Authentic Screenshots)**: 57 test cases passed across all 11 forms.
 - **Blocked Test Cases (Platform Tier / Access Gating)**: 4 test cases documented with restriction evidence.
-- **Not Executed Test Cases (Pending)**: 49 test cases preserved as designed.
+- **Not Executed Test Cases (Pending)**: 48 test cases preserved as designed.
 - **Status Alignment**: Every test case marked as `Executed` or `Blocked` has verified screenshot evidence in Deliverable D5 (Execution Log). All remaining designed test cases are accurately classified as `Not Executed` (`Result: Pending`), completely eliminating status mismatches.
 
 ---

@@ -9,9 +9,9 @@
 
 ## Summary of Evidence Status
 - **Total Designed Test Cases:** 109 (77 Equivalence Partitioning + 32 Boundary Value Analysis)
-- **Executed & Verified (Pass):** 53 test cases
+- **Executed & Verified (Pass):** 57 test cases
 - **Blocked by Access / Subscription Restrictions:** 4 test cases (Evidence documented)
-- **Pending Execution (Optional Additional Cases):** 52 test cases
+- **Pending Execution (Optional Additional Cases):** 48 test cases
 
 ---
 

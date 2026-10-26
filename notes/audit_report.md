@@ -12,9 +12,9 @@
 ## 1. Authoritative Test Execution Reconciliation
 
 - **Total Test Cases Designed:** 109 (77 Equivalence Partitioning + 32 Boundary Value Analysis)
-- **Executed & Passed:** 47 test cases backed by authentic desktop screenshot evidence.
+- **Executed & Passed:** 57 test cases backed by authentic desktop screenshot evidence.
 - **Blocked by Platform Tier / Paywall Restrictions:** 4 test cases (`TC-EP-032`, `TC-EP-057`, `TC-EP-062`, `TC-EP-070`) backed by restriction proof.
-- **Not Executed (Pending):** 58 test cases truthfully preserved as designed test cases.
+- **Not Executed (Pending):** 48 test cases truthfully preserved as designed test cases.
 - **Total Evidence Figures Embedded in D5:** 44 high-resolution desktop captures in DOCX and PDF deliverables.
 
 ---

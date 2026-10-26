@@ -1545,11 +1545,11 @@
     "preconditions": "Application online; Chrome 156 on Windows 11; account logged in where gated",
     "test_steps": "1. Navigate to Contact Form (/contact). 2. Enter boundary value '10 chars (\"1234567890\")' into Message Length. 3. Submit. 4. Observe boundary reaction.",
     "expected_result": "Accept exact minimum 10 char message",
-    "actual_result": "Not Executed during test session",
-    "execution_status": "Not Executed",
-    "verdict": "Pending",
-    "evidence_filename": "N/A (Designed)",
-    "execution_timestamp": "N/A"
+    "actual_result": "Valid message length at boundary (10 chars) accepted; form submitted successfully with green banner: Message sent. We will get back to you soon.",
+    "execution_status": "Executed",
+    "verdict": "Pass",
+    "evidence_filename": "evidence/BVA/TC-BVA-020.png",
+    "execution_timestamp": "2026-10-26 19:11:00"
   },
   {
     "test_case_id": "TC-BVA-021",

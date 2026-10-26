@@ -553,7 +553,8 @@ evidence_items = [
     ("TC-BVA-016", "evidence/BVA/TC-BVA-016.png", "Safe Withdrawal Rate: BVA Rate = -3.5% (Below bound) triggers 'Phase 1 withdrawal rate must be between 0% and 100%'."),
     ("TC-BVA-017", "evidence/BVA/TC-BVA-017.png", "Safe Withdrawal Rate: BVA Rate = -3.5% (Below bound) triggers 'Phase 1 withdrawal rate must be between 0% and 100%'."),
     ("TC-BVA-018", "evidence/BVA/TC-BVA-018.png", "Safe Withdrawal Rate: BVA Rate = 120% (Above bound) triggers 'Phase 1 withdrawal rate must be between 0% and 100%'."),
-    ("TC-BVA-019", "evidence/BVA/TC-BVA-019.png", "Contact Form (/contact): BVA Message = 5 chars (Below bound) triggers 'Message must be at least 10 characters.'")
+    ("TC-BVA-019", "evidence/BVA/TC-BVA-019.png", "Contact Form (/contact): BVA Message = 5 chars (Below bound) triggers 'Message must be at least 10 characters.'"),
+    ('TC-BVA-020', 'evidence/BVA/TC-BVA-020.png', 'Contact Form (/contact): BVA Message length at 10-char boundary accepted; green confirmation banner'),
 ]
 
 base_table_idx = 66
