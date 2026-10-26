@@ -43,7 +43,7 @@ This matrix provides complete, bidirectional traceability linking every test cas
 | `TC-EP-029` | Portfolio Backtester (`/`) | Cashflows | EP (Weak Robust) | `EC-030` | Not Executed | Pending | — |
 | `TC-EP-030` | Portfolio Backtester (`/`) | Cashflows | EP (Weak Robust) | `EC-031` | **Executed** | **Pass** | `evidence/EP/TC-EP-030.png` |
 | `TC-EP-031` | Portfolio Backtester (`/`) | Cashflows | EP (Weak Robust) | `EC-032` | **Executed** | **Pass** | `evidence/EP/TC-EP-031.png` |
-| `TC-EP-032` | Monte Carlo (`/monte-carlo`) | Horizon | EP (Weak Robust) | `EC-033` | **Executed** | **Pass** | `evidence/EP/TC-EP-032.png` |
+| `TC-EP-032` | Monte Carlo (`/monte-carlo`) | Horizon | EP (Weak Robust) | `EC-033` | **Blocked** | **Blocked** | `evidence/EP/TC-EP-032.png` |
 | `TC-EP-033` | Monte Carlo (`/monte-carlo`) | Horizon | EP (Weak Robust) | `EC-034` | **Executed** | **Pass** | `evidence/EP/TC-EP-033.png` |
 | `TC-EP-034` | Monte Carlo (`/monte-carlo`) | Horizon | EP (Weak Robust) | `EC-035` | **Executed** | **Pass** | `evidence/EP/TC-EP-034.png` |
 | `TC-EP-035` | Monte Carlo (`/monte-carlo`) | Simulations | EP (Weak Robust) | `EC-036` | Not Executed | Pending | — |
@@ -68,12 +68,12 @@ This matrix provides complete, bidirectional traceability linking every test cas
 | `TC-EP-054` | Contact Form (`/contact`) | Message | EP (Weak Robust) | `EC-055` | Not Executed | Pending | — |
 | `TC-EP-055` | Contact Form (`/contact`) | Message | EP (Weak Robust) | `EC-056` | Not Executed | Pending | — |
 | `TC-EP-056` | Contact Form (`/contact`) | Captcha | EP (Weak Robust) | `EC-058` | Not Executed | Pending | — |
-| `TC-EP-057` | Lump Sum vs DCA (`/lumpsum-vs-dca`) | Initial Lump Sum | EP (Weak Robust) | `EC-059` | **Executed** | **Pass** | `evidence/EP/TC-EP-057.png` |
+| `TC-EP-057` | Lump Sum vs DCA (`/lumpsum-vs-dca`) | Initial Lump Sum | EP (Weak Robust) | `EC-059` | **Blocked** | **Blocked** | `evidence/EP/TC-EP-057.png` |
 | `TC-EP-058` | Lump Sum vs DCA (`/lumpsum-vs-dca`) | Initial Lump Sum | EP (Weak Robust) | `EC-060` | Not Executed | Pending | — |
 | `TC-EP-059` | Lump Sum vs DCA (`/lumpsum-vs-dca`) | Initial Lump Sum | EP (Weak Robust) | `EC-061` | Not Executed | Pending | — |
 | `TC-EP-060` | Lump Sum vs DCA (`/lumpsum-vs-dca`) | DCA Contribution | EP (Weak Robust) | `EC-062` | Not Executed | Pending | — |
 | `TC-EP-061` | Lump Sum vs DCA (`/lumpsum-vs-dca`) | DCA Contribution | EP (Weak Robust) | `EC-063` | Not Executed | Pending | — |
-| `TC-EP-062` | TVM Calculator (`/time-value-of-money`) | Starting Value | EP (Weak Robust) | `EC-064` | **Executed** | **Pass** | `evidence/EP/TC-EP-062.png` |
+| `TC-EP-062` | TVM Calculator (`/time-value-of-money`) | Starting Value | EP (Weak Robust) | `EC-064` | **Blocked** | **Blocked** | `evidence/EP/TC-EP-062.png` |
 | `TC-EP-063` | TVM Calculator (`/time-value-of-money`) | Starting Value | EP (Weak Robust) | `EC-065` | Not Executed | Pending | — |
 | `TC-EP-064` | TVM Calculator (`/time-value-of-money`) | Starting Value | EP (Weak Robust) | `EC-066` | Not Executed | Pending | — |
 | `TC-EP-065` | TVM Calculator (`/time-value-of-money`) | Contribution | EP (Weak Robust) | `EC-067` | **Executed** | **Pass** | `evidence/EP/TC-EP-065.png` |

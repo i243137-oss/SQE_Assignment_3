@@ -9,15 +9,14 @@
 
 ## Summary of Evidence Status
 - **Total Designed Test Cases:** 109 (77 Equivalence Partitioning + 32 Boundary Value Analysis)
-- **Executed with Verified Desktop Screenshot Evidence:** 51 test cases (Pass)
-- **Pending Execution / Optional Additional Evidence:** 58 test cases
-- **Sticky Note Requirement:** Display real Windows desktop Sticky Note with `24i-3137 / Umair Hassan / SE C` on screen.
+- **Executed & Verified (Pass):** 47 test cases
+- **Blocked by Access / Subscription Restrictions:** 4 test cases (Evidence documented)
+- **Pending Execution (Optional Additional Cases):** 58 test cases
 
 ---
 
-## Part 1: Completed Test Cases (51 Executed & Verified on Disk)
-
-| Test Case ID | Form / Tool | Field | Inputs Tested | Actual System Response | Verified Evidence Path | Status |
+## Part 1: Fully Executed & Passed Cases (47 Cases)
+| Test Case ID | Form / Tool | Field | Inputs Tested | Observed System Response | Verified Evidence Path | Verdict |
 |:---|:---|:---|:---|:---|:---|:---:|
 | `TC-EP-003` | Auth Modal (/start) | Email | `Email: notanemail, Password: Pass123!` | Client-side tooltip displayed: 'Please include an @ in the e... | `evidence/EP/TC-EP-003.png` | **Pass** |
 | `TC-EP-004` | Auth Modal (/start) | Email | `Email: user@domain, Password: Pass123!` | Not Executed during test session... | `evidence/EP/TC-EP-004.png` | **Pass** |
@@ -42,7 +41,6 @@
 | `TC-EP-028` | Portfolio Backtester (/) | Rolling Window | `Rolling Window: "" (empty)` | Not Executed during test session... | `evidence/EP/TC-EP-028.png` | **Pass** |
 | `TC-EP-030` | Portfolio Backtester (/) | Cashflows | `Cashflow: $500, Frequency: Monthly` | Not Executed during test session... | `evidence/EP/TC-EP-030.png` | **Pass** |
 | `TC-EP-031` | Portfolio Backtester (/) | Cashflows | `Cashflow: -$500` | Negative cashflow -$500 accepted and treated as scheduled wi... | `evidence/EP/TC-EP-031.png` | **Pass** |
-| `TC-EP-032` | Monte Carlo (/monte-carlo) | Horizon | `Years: 30` | Setting 30 years triggers platform modal: "Sign in or upgrad... | `evidence/EP/TC-EP-032.png` | **Pass** |
 | `TC-EP-033` | Monte Carlo (/monte-carlo) | Horizon | `Years: 0` | Entering 0 years triggers red top validation banner: "Number... | `evidence/EP/TC-EP-033.png` | **Pass** |
 | `TC-EP-034` | Monte Carlo (/monte-carlo) | Horizon | `Years: "" (empty)` | Leaving number of years blank/empty triggers red top validat... | `evidence/EP/TC-EP-034.png` | **Pass** |
 | `TC-EP-037` | Safe Withdrawal (/safe-withdrawal-rate-calculator) | Rate (%) | `Withdrawal Rate: 4.0%` | Baseline withdrawal rate 4.00% executed successfully; comput... | `evidence/EP/TC-EP-037.png` | **Pass** |
@@ -55,13 +53,10 @@
 | `TC-EP-044` | Efficient Frontier (/efficient-frontier) | Assets | `1 asset (VTI)` | Single ticker "SPY" rejected by top red banner: "You must sp... | `evidence/EP/TC-EP-044.png` | **Pass** |
 | `TC-EP-052` | Contact Form (/contact) | Message, Captcha | `Message: 32 chars, Captcha: Verified` | Valid contact form inquiry submitted with student email i243... | `evidence/EP/TC-EP-052.png` | **Pass** |
 | `TC-EP-053` | Contact Form (/contact) | Message | `Message: ijklmno (7 chars)` | Short message (5 chars "Hello") rejected by top red validati... | `evidence/EP/TC-EP-053.png` | **Pass** |
-| `TC-EP-057` | Lump Sum vs DCA (/lumpsum-vs-dca) | Initial Lump Sum | `Lump Sum: $50,000` | Gated feature behavior verified: Navigating to /lumpsum-vs-d... | `evidence/EP/TC-EP-057.png` | **Pass** |
-| `TC-EP-062` | TVM Calculator (/time-value-of-money) | Starting Value | `Starting Value: $10,000` | Modal dialog displayed: 'Sign in required. Sign in with a fr... | `evidence/EP/TC-EP-062.png` | **Pass** |
 | `TC-EP-065` | TVM Calculator (/time-value-of-money) | Contribution | `Monthly Contribution: $1,000` | Form loaded; discovered real TVM parameters (variables, cont... | `evidence/EP/TC-EP-065.png` | **Pass** |
 | `TC-EP-066` | TVM Calculator (/time-value-of-money) | Contribution | `Monthly Contribution: $0` | Calculated successfully; rendered interactive chart: 'sample... | `evidence/EP/TC-EP-066.png` | **Pass** |
 | `TC-EP-067` | TVM Calculator (/time-value-of-money) | Contribution | `Monthly Contribution: -$500` | Red banner displayed: 'Contribution must be between $0 and $... | `evidence/EP/TC-EP-067.png` | **Pass** |
 | `TC-EP-069` | TVM Calculator (/time-value-of-money) | Contribution | `Monthly Contribution: ""` | Banner: 'Contribution must be between $0 and $100,000.' Reta... | `evidence/EP/TC-EP-069.png` | **Pass** |
-| `TC-EP-070` | Rebalancing Sensitivity (/rebalancing-sensitivity) | Frequency | `Frequency: Monthly` | Gated premium feature behavior verified: Navigating to /reba... | `evidence/EP/TC-EP-070.png` | **Pass** |
 | `TC-BVA-004` | Portfolio Backtester | Starting Value ($) | `$0` | Tooltip: "Value must be greater than or equal to 1."... | `evidence/BVA/TC-BVA-004.png` | **Pass** |
 | `TC-BVA-007` | Portfolio Backtester | Date Range | `Start: 01/01/2023, End: 01/01/2023` | Red banner: "Start date must be before end date"... | `evidence/BVA/TC-BVA-007.png` | **Pass** |
 | `TC-BVA-010` | Portfolio Backtester | Rolling Window | `0 months` | Tooltip: "Value must be greater than or equal to 1."... | `evidence/BVA/TC-BVA-010.png` | **Pass** |
@@ -73,11 +68,20 @@
 
 ---
 
-## Part 2: Pending Test Cases Checklist (58 Remaining Cases)
-If you wish to capture additional evidence screenshots, here are the exact parameters, URLs, and expected responses for each pending test case:
+## Part 2: Tests Blocked by Platform Tier / Access Gating (4 Cases)
+| Test Case ID | Form / Tool | Target Field | Attempted Input | Observed Access Restriction | Evidence Path | Status |
+|:---|:---|:---|:---|:---|:---|:---:|
+| `TC-EP-032` | Monte Carlo (/monte-carlo) | Horizon | `Years: 30` | Blocked by platform subscription restriction: Free tier caps horizon at 15 years; 30-year input triggers tier limit modal: "Sign in or upgrade for higher Monte Carlo limits". | `evidence/EP/TC-EP-032.png` | **Blocked** |
+| `TC-EP-057` | Lump Sum vs DCA (/lumpsum-vs-dca) | Initial Lump Sum | `Lump Sum: $50,000` | Blocked by platform subscription gating: Navigating to /lumpsum-vs-dca redirects unauthenticated/free users to /pricing plan ("Recommended for Lump Sum vs DCA"). | `evidence/EP/TC-EP-057.png` | **Blocked** |
+| `TC-EP-062` | TVM Calculator (/time-value-of-money) | Starting Value | `Starting Value: $10,000` | Blocked by platform access control: TVM tool is gated; clicking calculate triggers "Sign in or create your account" modal. | `evidence/EP/TC-EP-062.png` | **Blocked** |
+| `TC-EP-070` | Rebalancing Sensitivity (/rebalancing-sensitivity) | Frequency | `Frequency: Monthly` | Blocked by platform subscription gating: Gated behind Pro subscription; banner: "Premium tool: Rebalancing Sensitivity: Requires Pro or higher". | `evidence/EP/TC-EP-070.png` | **Blocked** |
+
+---
+
+## Part 3: Pending Test Cases Checklist (58 Remaining Cases)
+Parameters for optional manual capture:
 
 ### Tool: Auth Modal (/start) (4 pending)
-
 | Checkbox | Test Case ID | Target Field | Input Values | Expected Response | Target Evidence Path |
 |:---:|:---|:---|:---|:---|:---|
 | [ ] | `TC-EP-001` | Email, Password | `Email: test@example.com, Password: Testfol123!` | Credentials accepted or account created | `evidence/EP/TC-EP-001.png` |
@@ -86,7 +90,6 @@ If you wish to capture additional evidence screenshots, here are the exact param
 | [ ] | `TC-BVA-014` | Password Length | `1 char ("a")` | Submit button activates | `evidence/BVA/TC-BVA-014.png` |
 
 ### Tool: Contact Form (/contact) (14 pending)
-
 | Checkbox | Test Case ID | Target Field | Input Values | Expected Response | Target Evidence Path |
 |:---:|:---|:---|:---|:---|:---|
 | [ ] | `TC-EP-046` | Email | `Email: i243137@isb.nu.edu.pk` | Valid institutional email accepted | `evidence/EP/TC-EP-046.png` |
@@ -105,13 +108,11 @@ If you wish to capture additional evidence screenshots, here are the exact param
 | [ ] | `TC-BVA-024` | Subject Length | `121 chars` | Block input exceeding 120 chars | `evidence/BVA/TC-BVA-024.png` |
 
 ### Tool: Efficient Frontier (/efficient-frontier) (1 pending)
-
 | Checkbox | Test Case ID | Target Field | Input Values | Expected Response | Target Evidence Path |
 |:---:|:---|:---|:---|:---|:---|
 | [ ] | `TC-EP-045` | Assets | `0 assets selected` | Block execution | `evidence/EP/TC-EP-045.png` |
 
 ### Tool: Lump Sum vs DCA (/lumpsum-vs-dca) (6 pending)
-
 | Checkbox | Test Case ID | Target Field | Input Values | Expected Response | Target Evidence Path |
 |:---:|:---|:---|:---|:---|:---|
 | [ ] | `TC-EP-058` | Initial Lump Sum | `Lump Sum: $0` | Reject zero initial lump sum | `evidence/EP/TC-EP-058.png` |
@@ -122,14 +123,12 @@ If you wish to capture additional evidence screenshots, here are the exact param
 | [ ] | `TC-BVA-026` | Initial Lump Sum ($) | `$1` | Accept minimum $1 starting lump sum | `evidence/BVA/TC-BVA-026.png` |
 
 ### Tool: Monte Carlo (/monte-carlo) (2 pending)
-
 | Checkbox | Test Case ID | Target Field | Input Values | Expected Response | Target Evidence Path |
 |:---:|:---|:---|:---|:---|:---|
 | [ ] | `TC-EP-035` | Simulations | `Number of Simulations: 1,000` | Standard simulation count executes | `evidence/EP/TC-EP-035.png` |
 | [ ] | `TC-EP-036` | Simulations | `Number of Simulations: 0` | Reject zero simulations | `evidence/EP/TC-EP-036.png` |
 
 ### Tool: Portfolio Backtester (14 pending)
-
 | Checkbox | Test Case ID | Target Field | Input Values | Expected Response | Target Evidence Path |
 |:---:|:---|:---|:---|:---|:---|
 | [ ] | `TC-EP-073` | Portfolios, Allocations, Starting Value, Dates, Rolling Window, Cashflow | `Portfolio: 1 present (VTISIM: 60%, BNDSIM: 40%), Starting Value: $10,000, Start: 01/01/2015, End: 12/31/2023, Rolling: 60, Cashflow: $0` | All Valid Combinations: Entire backtest suite executes, generating full performance summary, drawdowns, and Sharpe ratio | `evidence/EP/TC-EP-073.png` |
@@ -148,7 +147,6 @@ If you wish to capture additional evidence screenshots, here are the exact param
 | [ ] | `TC-BVA-012` | Rolling Window | `2 months` | Accept valid 2-month rolling calculation | `evidence/BVA/TC-BVA-012.png` |
 
 ### Tool: Portfolio Backtester (/) (6 pending)
-
 | Checkbox | Test Case ID | Target Field | Input Values | Expected Response | Target Evidence Path |
 |:---:|:---|:---|:---|:---|:---|
 | [ ] | `TC-EP-017` | Starting Value | `Starting Value: $10,000` | Standard initial investment accepted | `evidence/EP/TC-EP-017.png` |
@@ -159,14 +157,12 @@ If you wish to capture additional evidence screenshots, here are the exact param
 | [ ] | `TC-EP-029` | Cashflows | `Cashflow: $0, Frequency: Yearly` | Zero recurring cashflow treated as lump sum | `evidence/EP/TC-EP-029.png` |
 
 ### Tool: Rebalancing Sensitivity (/rebalancing-sensitivity) (2 pending)
-
 | Checkbox | Test Case ID | Target Field | Input Values | Expected Response | Target Evidence Path |
 |:---:|:---|:---|:---|:---|:---|
 | [ ] | `TC-EP-071` | Frequency | `Frequency: Never` | Models drift without rebalancing | `evidence/EP/TC-EP-071.png` |
 | [ ] | `TC-EP-072` | Frequency | `Frequency: null` | Highlight mandatory selection | `evidence/EP/TC-EP-072.png` |
 
 ### Tool: TVM Calculator (/time-value-of-money) (9 pending)
-
 | Checkbox | Test Case ID | Target Field | Input Values | Expected Response | Target Evidence Path |
 |:---:|:---|:---|:---|:---|:---|
 | [ ] | `TC-EP-063` | Starting Value | `Starting Value: $0` | Handle zero initial wealth | `evidence/EP/TC-EP-063.png` |

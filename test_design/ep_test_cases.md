@@ -40,7 +40,7 @@ Technique coverage:
 | `TC-EP-029` | `EC-030` | Portfolio Backtester (`/`) | Cashflows | `Cashflow: $0`, `Frequency: Yearly` | Zero recurring cashflow treated as lump sum | Pending Execution | Not Executed |
 | `TC-EP-030` | `EC-031` | Portfolio Backtester (`/`) | Cashflows | `Cashflow: $500`, `Frequency: Monthly` | Periodic deposits modeled correctly | Growth reflects $500/mo cashflow additions | **Pass** |
 | `TC-EP-031` | `EC-032` | Portfolio Backtester (`/`) | Cashflows | `Cashflow: -$500` | Reject negative contribution (or treat as withdrawal) | Treated as scheduled withdrawal leg | **Pass** |
-| `TC-EP-032` | `EC-033` | Monte Carlo (`/monte-carlo`) | Horizon | `Years: 30` | Valid 30-year simulation computed | Simulation runs 30-year distribution paths | **Pass** |
+| `TC-EP-032` | `EC-033` | Monte Carlo (`/monte-carlo`) | Horizon | `Years: 30` | Valid 30-year simulation computed | Blocked by tier restriction: Free tier caps horizon at 15 yrs; triggers upgrade modal | **Blocked** |
 | `TC-EP-033` | `EC-034` | Monte Carlo (`/monte-carlo`) | Horizon | `Years: 0` | Reject zero simulation horizon | Error / warning: horizon must be at least 1 yr | **Pass** |
 | `TC-EP-034` | `EC-035` | Monte Carlo (`/monte-carlo`) | Horizon | `Years: ""` (empty) | Reject missing horizon | Validation prompt for duration | **Pass** |
 | `TC-EP-035` | `EC-036` | Monte Carlo (`/monte-carlo`) | Simulations | `Number of Simulations: 1,000` | Standard simulation count executes | Pending Execution | Not Executed |
@@ -65,12 +65,12 @@ Technique coverage:
 | `TC-EP-054` | `EC-055` | Contact Form (`/contact`) | Message | `Message: ""` (empty) | Reject blank message | Pending Execution | Not Executed |
 | `TC-EP-055` | `EC-056` | Contact Form (`/contact`) | Message | `Message:` 5,005 chars | Reject message exceeding 5,000 characters | Pending Execution | Not Executed |
 | `TC-EP-056` | `EC-058` | Contact Form (`/contact`) | Captcha | Message: valid, Captcha: Unsolved | Block submission until anti-abuse check passes | Pending Execution | Not Executed |
-| `TC-EP-057` | `EC-059` | Lump Sum vs DCA (`/lumpsum-vs-dca`) | Initial Lump Sum | `Lump Sum: $50,000` | Valid lump sum comparative backtest runs | Comparison curve rendered | **Pass** |
+| `TC-EP-057` | `EC-059` | Lump Sum vs DCA (`/lumpsum-vs-dca`) | Initial Lump Sum | `Lump Sum: $50,000` | Valid lump sum comparative backtest runs | Blocked by paywall: Free users redirected to /pricing table ("Recommended for Lump Sum vs DCA") | **Blocked** |
 | `TC-EP-058` | `EC-060` | Lump Sum vs DCA (`/lumpsum-vs-dca`) | Initial Lump Sum | `Lump Sum: $0` | Reject zero initial lump sum | Pending Execution | Not Executed |
 | `TC-EP-059` | `EC-061` | Lump Sum vs DCA (`/lumpsum-vs-dca`) | Initial Lump Sum | `Lump Sum: ""` | Reject missing initial cash | Pending Execution | Not Executed |
 | `TC-EP-060` | `EC-062` | Lump Sum vs DCA (`/lumpsum-vs-dca`) | DCA Contribution | `DCA Monthly: $1,000` | Valid periodic contribution modeled | Pending Execution | Not Executed |
 | `TC-EP-061` | `EC-063` | Lump Sum vs DCA (`/lumpsum-vs-dca`) | DCA Contribution | `DCA Monthly: -$200` | Reject negative contribution amount | Pending Execution | Not Executed |
-| `TC-EP-062` | `EC-064` | TVM Calculator (`/time-value-of-money`) | Starting Value | `Starting Value: $10,000` | Valid present investment computed | TVM calculation runs and charts curve | **Pass** |
+| `TC-EP-062` | `EC-064` | TVM Calculator (`/time-value-of-money`) | Starting Value | `Starting Value: $10,000` | Valid present investment computed | Blocked by access control: Gated tool triggers "Sign in or create your account" modal | **Blocked** |
 | `TC-EP-063` | `EC-065` | TVM Calculator (`/time-value-of-money`) | Starting Value | `Starting Value: $0` | Handle zero initial wealth | Pending Execution | Not Executed |
 | `TC-EP-064` | `EC-066` | TVM Calculator (`/time-value-of-money`) | Starting Value | `Starting Value: ""` | Reject missing starting value | Pending Execution | Not Executed |
 | `TC-EP-065` | `EC-067` | TVM Calculator (`/time-value-of-money`) | Contribution | `Monthly Contribution: $1,000` | Valid periodic contribution computed | Results sampled and plotted | **Pass** |
