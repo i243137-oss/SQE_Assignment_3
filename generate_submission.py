@@ -10,8 +10,6 @@ import docx
 from docx.shared import Inches, Pt, RGBColor
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.enum.table import WD_TABLE_ALIGNMENT
-from docx.oxml import OxmlElement
-from docx.oxml.ns import qn
 
 def set_cell_text(cell, text, bold=False, italic=False, font_size=9, color=None, align=WD_ALIGN_PARAGRAPH.LEFT):
     cell.text = ""
@@ -26,19 +24,6 @@ def set_cell_text(cell, text, bold=False, italic=False, font_size=9, color=None,
     run.font.size = Pt(font_size)
     if color:
         run.font.color.rgb = color
-
-def add_paragraph_to_cell(cell, text, bold=False, italic=False, font_size=9, color=None, space_after=2):
-    p = cell.add_paragraph()
-    p.paragraph_format.space_before = Pt(1)
-    p.paragraph_format.space_after = Pt(space_after)
-    run = p.add_run(text)
-    run.bold = bold
-    run.italic = italic
-    run.font.name = "Calibri"
-    run.font.size = Pt(font_size)
-    if color:
-        run.font.color.rgb = color
-    return p
 
 print("Starting document population...")
 doc = docx.Document("source/official_template.docx")
@@ -58,7 +43,7 @@ for section in doc.sections:
 t0 = doc.tables[0]
 set_cell_text(t0.rows[0].cells[1], "Umair Hassan", bold=True)
 set_cell_text(t0.rows[1].cells[1], "24i-3137", bold=True)
-set_cell_text(t0.rows[2].cells[1], "SE-A / Batch 2024", bold=True)
+set_cell_text(t0.rows[2].cells[1], "SE C / Batch 2024", bold=True)
 set_cell_text(t0.rows[4].cells[1], "i243137@isb.nu.edu.pk", bold=True)
 set_cell_text(t0.rows[5].cells[1], "Google Chrome 156.0.8078.47 on Windows 11 (64-bit)", bold=True)
 
@@ -170,9 +155,9 @@ schedule_data = [
     ("Design EP Test Cases (Layer 2)", "Oct 25, 2026; Weak EP + Strong EP for Backtester (77 TCs)", "3.5", "Yes"),
     ("Complete BVA Boundary Tables (Layer 1)", "Oct 25, 2026; defined BC-001 to BC-015 with justifications", "2.5", "Yes"),
     ("Design BVA Test Cases (Layer 2)", "Oct 25, 2026; 2-point BVA + 3-point BVA on Backtester (32 TCs)", "3.0", "Yes"),
-    ("Execute test cases & capture screenshots", "Oct 25, 2026; live execution on Chrome with roll sticky note", "4.5", "Yes"),
-    ("Complete traceability matrix", "Oct 25, 2026; mapped 109 test cases to fields, techniques, verdicts", "2.0", "Yes"),
-    ("Compile PDF and submit", "Oct 25, 2026; document formatting, PDF export, LMS ready", "1.5", "Yes")
+    ("Execute test cases & capture screenshots", "Oct 25–26, 2026; live execution on Chrome with roll sticky note", "5.0", "Yes"),
+    ("Complete traceability matrix", "Oct 26, 2026; mapped 109 test cases to fields, techniques, verdicts", "2.0", "Yes"),
+    ("Compile PDF and submit", "Oct 26, 2026; document formatting, PDF export, LMS ready", "1.5", "Yes")
 ]
 for row_idx, item in enumerate(schedule_data):
     row = t17.rows[row_idx + 1]
@@ -205,52 +190,52 @@ t21 = doc.tables[21]
 probes_data = [
     ("PR-001", "Sign Up Modal (/start)", "Target: Password: '' (empty)\nContext: Email: 'probe_check@test.com'",
      "Sign in button is completely disabled (dimmed blue); form submission blocked without error banner.",
-     "Password is mandatory prerequisite; client disables button rather than showing banner. (Evidence: PR-001)"),
+     "Password is mandatory prerequisite; client disables button rather than showing banner. (Evidence: TP10-P01)"),
     ("PR-002", "Sign In Modal (/start)", "Target: Password: 'a' (1 char)\nContext: Email: 'test@example.com'",
      "Sign in button enables at 1 char. Submitting triggers red banner: 'Email or password wasn't recognized. Try again...'",
-     "Min length boundary to activate submit is 1 character. Backend returns secure generic authentication error. (Evidence: PR-002)"),
+     "Min length boundary to activate submit is 1 character. Backend returns secure generic authentication error. (Evidence: TP10-P02)"),
     ("PR-003", "Sign In Modal (/start)", "Target: Email: 'notanemail' (no @)\nContext: Password: dummy",
      "Clicking Sign in triggers HTML5 tooltip: 'Please include an '@' in the email address. 'notanemail' is missing an '@'.'",
-     "Email field enforces native type='email' validation; traps syntax errors client-side before network dispatch. (Evidence: PR-003)"),
+     "Email field enforces native type='email' validation; traps syntax errors client-side before network dispatch. (Evidence: TP10-P03)"),
     ("PR-004", "Portfolio Backtester (/)", "Target: Portfolios: 0 (empty list)\nContext: Default parameters",
      "Clicking BACKTEST immediately triggers red banner: 'No valid portfolios were found.' Execution halted.",
-     "System enforces mandatory portfolio prerequisite; backtesting engine requires >= 1 configured portfolio. (Evidence: PR-004)"),
+     "System enforces mandatory portfolio prerequisite; backtesting engine requires >= 1 configured portfolio. (Evidence: TP10-P04)"),
     ("PR-005", "Portfolio Backtester (/)", "Target: Allocations sum = 120% (VTISIM: 60%, BNDSIM: 60%)\nContext: Default 60/40 preset",
      "Total allocation turns red (120%). Clicking BACKTEST triggers red banner: 'Portfolio 1: Allocation percentages must sum to 100'.",
-     "Strict equality boundary: Total portfolio asset allocation must equal exactly 100%. (Evidence: PR-005)"),
+     "Strict equality boundary: Total portfolio asset allocation must equal exactly 100%. (Evidence: TP10-P05)"),
     ("PR-006", "Portfolio Backtester (/)", "Target: Starting Value: -$7\nContext: Valid 60/40 portfolio",
      "Clicking BACKTEST triggers validation tooltip: 'Value must be greater than or equal to 1.' Backtest blocked.",
-     "Lower bound identified: initial capital must be >= 1. Negative amounts trapped by client range constraint. (Evidence: PR-006)"),
+     "Lower bound identified: initial capital must be >= 1. Negative amounts trapped by client range constraint. (Evidence: TP10-P06)"),
     ("PR-007", "Portfolio Backtester (/)", "Target: Starting Value: $0\nContext: Valid 60/40 portfolio",
      "Clicking BACKTEST triggers validation tooltip: 'Value must be greater than or equal to 1.' Backtest blocked.",
-     "Conclusive BVA evidence: 0 is 'Below' boundary and invalid; exact boundary value is 1. (Evidence: PR-007)"),
+     "Conclusive BVA evidence: 0 is 'Below' boundary and invalid; exact boundary value is 1. (Evidence: TP10-P07)"),
     ("PR-008", "Portfolio Backtester (/)", "Target: Starting Value: '' (empty)\nContext: Valid 60/40 portfolio",
      "Clearing field and clicking BACKTEST displays top red banner: 'Invalid starting value'.",
-     "Empty input is a distinct invalid equivalence class handled via application banner. (Evidence: PR-008)"),
+     "Empty input is a distinct invalid equivalence class handled via application banner. (Evidence: TP10-P08)"),
     ("PR-009", "Portfolio Backtester (/)", "Target: Start: 01/01/2023, End: 01/01/2020\nContext: Custom range, 60/40 portfolio",
      "Clicking BACKTEST displays red banner: 'Start date must be before end date'. Execution halted.",
-     "Chronological order strictly enforced; End date preceding Start date is rejected. Relational bound: Start < End. (Evidence: PR-009)"),
+     "Chronological order strictly enforced; End date preceding Start date is rejected. Relational bound: Start < End. (Evidence: TP10-P09)"),
     ("PR-010", "Time Value of Money (/time-value-of-money)", "Target: Form layout exploration\nContext: Live page load",
      "Discovered real fields: Contribution Frequency/Timing, Variables (X, Y, Color), Range toggles, Starting Value $, Monthly contribution $.",
-     "Verified interface structure; non-standard TVM parameterization. (Evidence: PR-010)"),
+     "Verified interface structure; non-standard TVM parameterization. (Evidence: TP10-P10)"),
     ("PR-011", "Time Value of Money (/time-value-of-money)", "Target: Unauthenticated access\nContext: Click CALCULATE without login",
      "Modal dialog opens: 'Sign in required. Sign in with a free account to use the Time Value of Money Calculator.'",
-     "Advanced analytical tools enforce free account authentication gating. (Evidence: PR-011)"),
+     "Advanced analytical tools enforce free account authentication gating. (Evidence: TP10-P11)"),
     ("PR-012", "Time Value of Money (/time-value-of-money)", "Target: Monthly contribution: -$500\nContext: Signed in, $10,000 starting value",
      "Clicking CALCULATE displays red banner: 'Contribution must be between $0 and $100,000.' Execution blocked.",
-     "Explicit numeric boundary discovered: Lower bound = $0, Upper bound = $100,000. (Evidence: PR-012)"),
+     "Explicit numeric boundary discovered: Lower bound = $0, Upper bound = $100,000. (Evidence: TP10-P12)"),
     ("PR-013", "Time Value of Money (/time-value-of-money)", "Target: Monthly contribution: $0\nContext: Default parameters",
      "Calculation succeeds! Renders interactive curve: 'Results (sampled 1805 feasible solutions)'.",
-     "BVA lower bound confirmation: $0 is 'At' boundary and VALID. Range is closed [0, 100000]. (Evidence: PR-013)"),
+     "BVA lower bound confirmation: $0 is 'At' boundary and VALID. Range is closed [0, 100000]. (Evidence: TP10-P13)"),
     ("PR-014", "Time Value of Money (/time-value-of-money)", "Target: Monthly contribution: '' (empty)\nContext: Following PR-013 execution",
      "Displays banner: 'Contribution must be between $0 and $100,000.' Prior chart results remain rendered on screen.",
-     "Usability defect: Prior valid graph is not cleared when subsequent input validation fails. (Evidence: PR-014)"),
+     "Usability defect: Prior valid graph is not cleared when subsequent input validation fails. (Evidence: TP10-P14)"),
     ("PR-015", "Contact Form (/contact)", "Target: Message: 'ijklmno' (7 chars)\nContext: Email: i243137@isb.nu.edu.pk, Subject: 'abcdefg'",
      "Displays red banner: 'Message must be at least 10 characters.' Counter displays 7 / 5000.",
-     "BVA lower bound identified: min message length = 10 chars. Lengths < 10 are rejected. Max is 5,000. (Evidence: PR-015)"),
+     "BVA lower bound identified: min message length = 10 chars. Lengths < 10 are rejected. Max is 5,000. (Evidence: TP10-P15)"),
     ("PR-016", "Contact Form (/contact)", "Target: Message: >= 10 chars\nContext: Email: i243137@isb.nu.edu.pk, Captcha passed",
      "Green banner displays: 'Message sent. We will get back to you soon.' Form resets.",
-     "Valid payload accepted; Turnstile anti-abuse token verified by server. (Evidence: PR-016)")
+     "Valid payload accepted; Turnstile anti-abuse token verified by server. (Evidence: TP10-P16)")
 ]
 
 for row_idx, item in enumerate(probes_data):
@@ -383,7 +368,6 @@ for table_idx, data in enumerate(ep_layer1_data):
     header_text = f"EP-{table_idx+1:02d}  Feature / Form: {feature}    Input Field: {field}"
     set_cell_text(t_target.rows[0].cells[0], header_text, bold=True, font_size=8.5)
     
-    # Populate rows
     for r_idx, c_info in enumerate(classes):
         target_row_idx = r_idx + 2
         if target_row_idx < len(t_target.rows):
@@ -397,7 +381,6 @@ for table_idx, data in enumerate(ep_layer1_data):
 
 # --- Layer 2 EP Test Cases Table (Table 44) ---
 t44 = doc.tables[44]
-# Read EP test cases from test_design/ep_test_cases.md
 ep_test_cases = []
 with open("test_design/ep_test_cases.md", "r", encoding="utf-8") as f:
     for line in f:
@@ -407,7 +390,6 @@ with open("test_design/ep_test_cases.md", "r", encoding="utf-8") as f:
             if len(parts) >= 8:
                 ep_test_cases.append(parts)
 
-# Clear existing placeholder rows after header (keep row 0 as header)
 while len(t44.rows) > 1:
     tr = t44.rows[-1]._tr
     tr.getparent().remove(tr)
@@ -423,7 +405,6 @@ for tc in ep_test_cases:
     set_cell_text(row.cells[6], tc[6], font_size=7.5)
     set_cell_text(row.cells[7], tc[7], bold=True, font_size=7.5, align=WD_ALIGN_PARAGRAPH.CENTER)
 
-# Update Total EP Test Cases (Table 45)
 set_cell_text(doc.tables[45].rows[0].cells[1], str(len(ep_test_cases)), bold=True, font_size=9, align=WD_ALIGN_PARAGRAPH.CENTER)
 
 # --- Layer 1 BVA Boundary Tables (Tables 47 through 61) ---
@@ -467,7 +448,6 @@ with open("test_design/bva_test_cases.md", "r", encoding="utf-8") as f:
             if len(parts) >= 9:
                 bva_test_cases.append(parts)
 
-# Clear existing placeholder rows after header
 while len(t63.rows) > 1:
     tr = t63.rows[-1]._tr
     tr.getparent().remove(tr)
@@ -484,7 +464,6 @@ for tc in bva_test_cases:
     set_cell_text(row.cells[7], tc[7], font_size=7.5)
     set_cell_text(row.cells[8], tc[8], bold=True, font_size=7.5, align=WD_ALIGN_PARAGRAPH.CENTER)
 
-# Update Total BVA Test Cases (Table 64)
 set_cell_text(doc.tables[64].rows[0].cells[1], str(len(bva_test_cases)), bold=True, font_size=9, align=WD_ALIGN_PARAGRAPH.CENTER)
 
 # --- Traceability Matrix (Table 65) ---
@@ -498,7 +477,6 @@ with open("test_design/traceability_matrix.md", "r", encoding="utf-8") as f:
             if len(parts) >= 7:
                 trace_rows.append(parts)
 
-# Clear placeholder rows in Table 65 after header
 while len(t65.rows) > 1:
     tr = t65.rows[-1]._tr
     tr.getparent().remove(tr)
@@ -514,28 +492,59 @@ for tr_item in trace_rows:
     set_cell_text(row.cells[6], tr_item[6], bold=True, font_size=7.5, align=WD_ALIGN_PARAGRAPH.CENTER)
 
 # --- Deliverable D5 Execution Log ---
-# We have 14 authentic screenshot images in evidence/ covering all key test cases
+# All 22 executed test cases covering all 11 forms
 evidence_items = [
-    ("TC-EP-008", "evidence/PR-001_SignInModal_DisabledButton_StickyNote.png", "Auth Modal (/start): Empty Password client-side validation disables submit button."),
-    ("TC-EP-009 / TC-BVA-014", "evidence/PR-002_Login_SingleChar_UnrecognizedError.png", "Auth Modal (/login): 1-char password enables submit; server returns unrecognized credentials error banner."),
-    ("TC-EP-003", "evidence/PR-003_Email_MissingAtSymbol_Tooltip.png", "Auth Modal (/start): Malformed email missing '@' trapped by native HTML5 validation tooltip."),
-    ("TC-EP-012", "evidence/PR-004_Backtester_NoValidPortfolios_Error.png", "Portfolio Backtester: 0 portfolios added triggers red banner 'No valid portfolios were found.'"),
-    ("TC-EP-014 / TC-BVA-003", "evidence/PR-005_Backtester_AllocationsMustSumTo100.png", "Portfolio Backtester: Allocations summing to 120% (> 100%) triggers red banner 'Allocation percentages must sum to 100'."),
-    ("TC-EP-020 / TC-BVA-004", "evidence/PR-006_Backtester_StartingValue_Negative7_Tooltip.png", "Portfolio Backtester: Starting Value = -$7 triggers tooltip 'Value must be greater than or equal to 1.'"),
-    ("TC-BVA-004", "evidence/PR-007_Backtester_StartingValue_Zero_Tooltip.png", "Portfolio Backtester: Starting Value = $0 triggers tooltip 'Value must be greater than or equal to 1.'"),
-    ("TC-EP-021", "evidence/PR-008_Backtester_StartingValue_Empty_ErrorBanner.png", "Portfolio Backtester: Empty starting value triggers application red banner 'Invalid starting value'."),
-    ("TC-EP-023 / TC-BVA-008", "evidence/PR-009_Backtester_StartDateBeforeEndDate.png", "Portfolio Backtester: Inverted date range (Start 2023 > End 2020) triggers 'Start date must be before end date'."),
-    ("TC-EP-065", "evidence/PR-010_TimeValueOfMoney_FormDiscovery.png", "Time Value of Money: Form parameter discovery showing real inputs (Variables, Contributions, Frequencies)."),
-    ("TC-EP-062", "evidence/PR-011_TVM_SignInRequired_Modal.png", "Time Value of Money: Gated calculation requires free user authentication modal dialog."),
-    ("TC-EP-067 / TC-BVA-027", "evidence/PR-012_TVM_Negative500_RangeError.png", "Time Value of Money: Monthly contribution = -$500 triggers 'Contribution must be between $0 and $100,000.'"),
-    ("TC-EP-066 / TC-BVA-028", "evidence/PR-013_TVM_ZeroContribution_ChartRendered.png", "Time Value of Money: Monthly contribution = $0 (At boundary) successfully solves and renders interactive chart."),
-    ("TC-EP-069", "evidence/PR-014_TVM_EmptyContribution_RetainsPreviousResult.png", "Time Value of Money: Empty contribution triggers error banner while stale prior graph remains rendered (Defect)."),
-    ("TC-EP-053 / TC-BVA-019", "evidence/PR-015_ContactForm_MessageMin10Chars_Error.png", "Contact Form: Message length = 7 chars (< 10) triggers red banner 'Message must be at least 10 characters.'"),
-    ("TC-EP-052 / TC-BVA-020", "evidence/PR-016_ContactForm_MessageSent_Success.png", "Contact Form: Valid message (>= 10 chars) with verified Turnstile captcha triggers green success banner.")
+    ("TC-EP-003", "evidence/EP/TC-EP-003.png", "Auth Modal (/start): Malformed email missing '@' trapped by native HTML5 validation tooltip."),
+    ("TC-EP-004", "evidence/EP/TC-EP-004.png", "Auth Modal (/start): Email missing domain TLD (user@domain) triggers server error banner."),
+    ("TC-EP-005", "evidence/EP/TC-EP-005.png", "Auth Modal (/start): Empty email disables submit button client-side."),
+    ("TC-EP-006", "evidence/EP/TC-EP-006.png", "Auth Modal (/login): 1-char password activates submit button client-side."),
+    ("TC-EP-007", "evidence/EP/TC-EP-007.png", "Auth Modal (/login): Password with special characters accepted by input mask."),
+    ("TC-EP-008", "evidence/EP/TC-EP-008.png", "Auth Modal (/start): Empty Password client-side validation disables submit button."),
+    ("TC-EP-009", "evidence/EP/TC-EP-009.png", "Auth Modal (/login): Unrecognized credentials error banner displayed."),
+    ("TC-EP-010", "evidence/EP/TC-EP-010.png", "Portfolio Backtester (/): Valid backtest execution (SPY, CAGR 9.10%, Sharpe 0.58)."),
+    ("TC-EP-011", "evidence/EP/TC-EP-011.png", "Portfolio Backtester (/): Dual portfolio comparative performance (60/40 vs HFEA)."),
+    ("TC-EP-012", "evidence/EP/TC-EP-012.png", "Portfolio Backtester (/): 0 portfolios added triggers red banner 'No valid portfolios were found.'"),
+    ("TC-EP-013", "evidence/EP/TC-EP-013.png", "Portfolio Backtester (/): Exact 100% asset allocation accepted."),
+    ("TC-EP-014", "evidence/EP/TC-EP-014.png", "Portfolio Backtester (/): Allocations summing to 120% (> 100%) triggers red banner 'Allocations must sum to 100'."),
+    ("TC-EP-015", "evidence/EP/TC-EP-015.png", "Portfolio Backtester (/): Under-allocation 80% triggers banner 'Allocations must sum to 100'."),
+    ("TC-EP-016", "evidence/EP/TC-EP-016.png", "Portfolio Backtester (/): Negative allocation -10% (shorting accepted, total sums to 100%)."),
+    ("TC-EP-020", "evidence/EP/TC-EP-020.png", "Portfolio Backtester (/): Starting Value = -$7 triggers tooltip 'Value must be greater than or equal to 1.'"),
+    ("TC-EP-021", "evidence/EP/TC-EP-021.png", "Portfolio Backtester (/): Empty starting value triggers application red banner 'Invalid starting value'."),
+    ("TC-EP-023", "evidence/EP/TC-EP-023.png", "Portfolio Backtester (/): Inverted date range (Start 2023 > End 2020) triggers 'Start date must be before end date'."),
+    ("TC-EP-024", "evidence/EP/TC-EP-024.png", "Portfolio Backtester (/): Start date == End date triggers 'Start date must be before end date'."),
+    ("TC-EP-025", "evidence/EP/TC-EP-025.png", "Portfolio Backtester (/): Future date range (2099-2100) triggers 'No overlapping time period found'."),
+    ("TC-EP-027", "evidence/EP/TC-EP-027.png", "Portfolio Backtester (/): Rolling window 0 triggers tooltip 'Value must be greater than or equal to 1.'"),
+    ("TC-EP-028", "evidence/EP/TC-EP-028.png", "Portfolio Backtester (/): Empty rolling window triggers red banner 'Invalid rolling window'."),
+    ("TC-EP-030", "evidence/EP/TC-EP-030.png", "Portfolio Backtester (/): Monthly cashflow $500 backtest completed successfully."),
+    ("TC-EP-031", "evidence/EP/TC-EP-031.png", "Portfolio Backtester (/): Monthly negative cashflow -$500 accepted and executed as withdrawal leg."),
+    ("TC-EP-032", "evidence/EP/TC-EP-032.png", "Monte Carlo Simulator (/monte-carlo): Horizon 30 yrs triggers modal 'Sign in or upgrade for higher Monte Carlo limits'."),
+    ("TC-EP-033", "evidence/EP/TC-EP-033.png", "Monte Carlo Simulator (/monte-carlo): Horizon 0 yrs triggers banner 'Number of years must be positive'."),
+    ("TC-EP-034", "evidence/EP/TC-EP-034.png", "Monte Carlo Simulator (/monte-carlo): Empty horizon triggers banner 'Number of years must be positive'."),
+    ("TC-EP-037", "evidence/EP/TC-EP-037.png", "Safe Withdrawal Rate (/safe-withdrawal-rate-calculator): 4.00% baseline executed (93.52% preservation)."),
+    ("TC-EP-038", "evidence/EP/TC-EP-038.png", "Safe Withdrawal Rate (/safe-withdrawal-rate-calculator): 120% rate triggers banner 'Phase 1 withdrawal rate must be between 0% and 100%'."),
+    ("TC-EP-039", "evidence/EP/TC-EP-039.png", "Safe Withdrawal Rate (/safe-withdrawal-rate-calculator): Negative -3.5% rate triggers banner 'Phase 1 withdrawal rate must be between 0% and 100%'."),
+    ("TC-EP-040", "evidence/EP/TC-EP-040.png", "Backtest Optimizer (/backtest-optimizer): Bounded optimization solved (SPY 49.67%, TLT 10%, GLD 40.33%)."),
+    ("TC-EP-041", "evidence/EP/TC-EP-041.png", "Backtest Optimizer (/backtest-optimizer): Inconsistent bounds Min > Max triggers 'Min weight cannot exceed max weight for any ticker'."),
+    ("TC-EP-042", "evidence/EP/TC-EP-042.png", "Backtest Optimizer (/backtest-optimizer): Negative bound -10% triggers tooltip 'Value must be greater than or equal to 0.'"),
+    ("TC-EP-043", "evidence/EP/TC-EP-043.png", "Efficient Frontier (/efficient-frontier): Multi-asset covariance curved efficient frontier rendered."),
+    ("TC-EP-044", "evidence/EP/TC-EP-044.png", "Backtest Optimizer / Frontier: Single ticker SPY triggers banner 'You must specify at least two tickers'."),
+    ("TC-EP-052", "evidence/EP/TC-EP-052.png", "Contact Form (/contact): Valid inquiry submitted with student email i243137@isb.nu.edu.pk; green banner 'Message sent'."),
+    ("TC-EP-053", "evidence/EP/TC-EP-053.png", "Contact Form (/contact): Message length = 5 chars triggers red banner 'Message must be at least 10 characters.'"),
+    ("TC-EP-057", "evidence/EP/TC-EP-057.png", "Lump Sum vs DCA (/lumpsum-vs-dca): Feature gated by paywall; redirects to pricing table 'Recommended for Lump Sum vs DCA'."),
+    ("TC-EP-062", "evidence/EP/TC-EP-062.png", "Time Value of Money (/time-value-of-money): Gated calculation triggers 'Sign in required' modal dialog."),
+    ("TC-EP-065", "evidence/EP/TC-EP-065.png", "Time Value of Money (/time-value-of-money): Form inputs ($10,000 starting value, $1,000 monthly contribution)."),
+    ("TC-EP-066", "evidence/EP/TC-EP-066.png", "Time Value of Money (/time-value-of-money): Monthly contribution = $0 boundary computes 1,805 solutions."),
+    ("TC-EP-067", "evidence/EP/TC-EP-067.png", "Time Value of Money (/time-value-of-money): Monthly contribution = -$500 triggers 'Contribution must be between $0 and $100,000.'"),
+    ("TC-EP-069", "evidence/EP/TC-EP-069.png", "Time Value of Money (/time-value-of-money): Empty contribution triggers error banner while retaining prior graph (Defect)."),
+    ("TC-EP-070", "evidence/EP/TC-EP-070.png", "Rebalancing Sensitivity (/rebalancing-sensitivity): Gated premium tool; banner 'Premium tool: Requires Pro or higher.'"),
+    ("TC-BVA-004", "evidence/BVA/TC-BVA-004.png", "Portfolio Backtester (/): BVA Starting Value = $0 (Below bound) triggers tooltip 'Value must be greater than or equal to 1.'"),
+    ("TC-BVA-007", "evidence/BVA/TC-BVA-007.png", "Portfolio Backtester (/): BVA Dates Start == End (Boundary) triggers 'Start date must be before end date.'"),
+    ("TC-BVA-010", "evidence/BVA/TC-BVA-010.png", "Portfolio Backtester (/): BVA Rolling Window = 0 (Below bound) triggers 'Value must be greater than or equal to 1.'"),
+    ("TC-BVA-015", "evidence/BVA/TC-BVA-015.png", "Monte Carlo Simulator (/monte-carlo): BVA Horizon = 0 yrs (Below bound) triggers 'Number of years must be positive.'"),
+    ("TC-BVA-017", "evidence/BVA/TC-BVA-017.png", "Safe Withdrawal Rate: BVA Rate = -3.5% (Below bound) triggers 'Phase 1 withdrawal rate must be between 0% and 100%'."),
+    ("TC-BVA-019", "evidence/BVA/TC-BVA-019.png", "Contact Form (/contact): BVA Message = 5 chars (Below bound) triggers 'Message must be at least 10 characters.'")
 ]
 
-# The template has 5 sample blocks (Table 66 to 75).
-# Let's populate the available blocks and add additional tables as needed.
 base_table_idx = 66
 for idx, item in enumerate(evidence_items):
     tc_id, img_path, caption = item
@@ -545,10 +554,8 @@ for idx, item in enumerate(evidence_items):
         t_id = doc.tables[pair_table_id]
         t_img = doc.tables[pair_table_id + 1]
     else:
-        # Add new title table
         t_id = doc.add_table(rows=1, cols=2)
         t_id.alignment = WD_TABLE_ALIGNMENT.CENTER
-        # Add new image table
         t_img = doc.add_table(rows=1, cols=1)
         t_img.alignment = WD_TABLE_ALIGNMENT.CENTER
 
@@ -570,4 +577,4 @@ for idx, item in enumerate(evidence_items):
 
 output_docx = "output/SQE_A3_Submission_UmairHassan.docx"
 doc.save(output_docx)
-print(f"Successfully generated DOCX submission: {output_docx}")
+print(f"Successfully generated complete DOCX submission: {output_docx}")
