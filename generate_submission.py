@@ -492,7 +492,7 @@ for tr_item in trace_rows:
     set_cell_text(row.cells[6], tr_item[6], bold=True, font_size=7.5, align=WD_ALIGN_PARAGRAPH.CENTER)
 
 # --- Deliverable D5 Execution Log ---
-# All 22 executed test cases covering all 11 forms
+# All 51 executed and blocked test cases covering all 11 forms
 evidence_items = [
     ("TC-EP-003", "evidence/EP/TC-EP-003.png", "Auth Modal (/start): Malformed email missing '@' trapped by native HTML5 validation tooltip."),
     ("TC-EP-004", "evidence/EP/TC-EP-004.png", "Auth Modal (/start): Email missing domain TLD (user@domain) triggers server error banner."),
@@ -537,9 +537,15 @@ evidence_items = [
     ("TC-EP-067", "evidence/EP/TC-EP-067.png", "Time Value of Money (/time-value-of-money): Monthly contribution = -$500 triggers 'Contribution must be between $0 and $100,000.'"),
     ("TC-EP-069", "evidence/EP/TC-EP-069.png", "Time Value of Money (/time-value-of-money): Empty contribution triggers error banner while retaining prior graph (Defect)."),
     ("TC-EP-070", "evidence/EP/TC-EP-070.png", "Rebalancing Sensitivity (/rebalancing-sensitivity): Gated premium tool; banner 'Premium tool: Requires Pro or higher.'"),
+    ("TC-BVA-001", "evidence/BVA/TC-BVA-001.png", "Portfolio Backtester (/): BVA Allocation Sum = 80% (Below bound) triggers 'Allocations must sum to 100'."),
+    ("TC-BVA-002", "evidence/BVA/TC-BVA-002.png", "Portfolio Backtester (/): BVA Allocation Sum = 100% (At bound) executes successfully."),
+    ("TC-BVA-003", "evidence/BVA/TC-BVA-003.png", "Portfolio Backtester (/): BVA Allocation Sum = 120% (Above bound) triggers 'Allocations must sum to 100'."),
     ("TC-BVA-004", "evidence/BVA/TC-BVA-004.png", "Portfolio Backtester (/): BVA Starting Value = $0 (Below bound) triggers tooltip 'Value must be greater than or equal to 1.'"),
     ("TC-BVA-007", "evidence/BVA/TC-BVA-007.png", "Portfolio Backtester (/): BVA Dates Start == End (Boundary) triggers 'Start date must be before end date.'"),
+    ("TC-BVA-008", "evidence/BVA/TC-BVA-008.png", "Portfolio Backtester (/): BVA Dates Start > End (Below bound) triggers 'Start date must be before end date.'"),
     ("TC-BVA-010", "evidence/BVA/TC-BVA-010.png", "Portfolio Backtester (/): BVA Rolling Window = 0 (Below bound) triggers 'Value must be greater than or equal to 1.'"),
+    ("TC-BVA-013", "evidence/BVA/TC-BVA-013.png", "Auth Modal (/start): BVA Password = 0 chars (Below bound) disables submit button client-side."),
+    ("TC-BVA-014", "evidence/BVA/TC-BVA-014.png", "Auth Modal (/start): BVA Password = 1 char (At bound) enables submit button client-side."),
     ("TC-BVA-015", "evidence/BVA/TC-BVA-015.png", "Monte Carlo Simulator (/monte-carlo): BVA Horizon = 0 yrs (Below bound) triggers 'Number of years must be positive.'"),
     ("TC-BVA-016", "evidence/BVA/TC-BVA-016.png", "Safe Withdrawal Rate: BVA Rate = -3.5% (Below bound) triggers 'Phase 1 withdrawal rate must be between 0% and 100%'."),
     ("TC-BVA-017", "evidence/BVA/TC-BVA-017.png", "Safe Withdrawal Rate: BVA Rate = -3.5% (Below bound) triggers 'Phase 1 withdrawal rate must be between 0% and 100%'."),

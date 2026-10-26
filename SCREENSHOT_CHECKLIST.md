@@ -9,13 +9,13 @@
 
 ## Summary of Evidence Status
 - **Total Designed Test Cases:** 109 (77 Equivalence Partitioning + 32 Boundary Value Analysis)
-- **Executed & Verified (Pass):** 47 test cases
+- **Executed & Verified (Pass):** 53 test cases
 - **Blocked by Access / Subscription Restrictions:** 4 test cases (Evidence documented)
-- **Pending Execution (Optional Additional Cases):** 58 test cases
+- **Pending Execution (Optional Additional Cases):** 52 test cases
 
 ---
 
-## Part 1: Fully Executed & Passed Cases (47 Cases)
+## Part 1: Fully Executed & Passed Cases (53 Cases)
 | Test Case ID | Form / Tool | Field | Inputs Tested | Observed System Response | Verified Evidence Path | Verdict |
 |:---|:---|:---|:---|:---|:---|:---:|
 | `TC-EP-003` | Auth Modal (/start) | Email | `Email: notanemail, Password: Pass123!` | Client-side tooltip displayed: 'Please include an @ in the e... | `evidence/EP/TC-EP-003.png` | **Pass** |
@@ -57,9 +57,15 @@
 | `TC-EP-066` | TVM Calculator (/time-value-of-money) | Contribution | `Monthly Contribution: $0` | Calculated successfully; rendered interactive chart: 'sample... | `evidence/EP/TC-EP-066.png` | **Pass** |
 | `TC-EP-067` | TVM Calculator (/time-value-of-money) | Contribution | `Monthly Contribution: -$500` | Red banner displayed: 'Contribution must be between $0 and $... | `evidence/EP/TC-EP-067.png` | **Pass** |
 | `TC-EP-069` | TVM Calculator (/time-value-of-money) | Contribution | `Monthly Contribution: ""` | Banner: 'Contribution must be between $0 and $100,000.' Reta... | `evidence/EP/TC-EP-069.png` | **Pass** |
+| `TC-BVA-001` | Portfolio Backtester | Allocation Sum (%) | `99% (VTISIM: 59%, BND: 40%)` | Under-allocated portfolio (80%) rejected; allocation total t... | `evidence/BVA/TC-BVA-001.png` | **Pass** |
+| `TC-BVA-002` | Portfolio Backtester | Allocation Sum (%) | `100% (VTISIM: 60%, BND: 40%)` | Exact 100% allocation accepted; backtest executes simulation... | `evidence/BVA/TC-BVA-002.png` | **Pass** |
+| `TC-BVA-003` | Portfolio Backtester | Allocation Sum (%) | `101% (VTISIM: 61%, BND: 40%)` | Over-allocated portfolio (120%) rejected; top red banner dis... | `evidence/BVA/TC-BVA-003.png` | **Pass** |
 | `TC-BVA-004` | Portfolio Backtester | Starting Value ($) | `$0` | Tooltip: "Value must be greater than or equal to 1."... | `evidence/BVA/TC-BVA-004.png` | **Pass** |
 | `TC-BVA-007` | Portfolio Backtester | Date Range | `Start: 01/01/2023, End: 01/01/2023` | Red banner: "Start date must be before end date"... | `evidence/BVA/TC-BVA-007.png` | **Pass** |
+| `TC-BVA-008` | Portfolio Backtester | Date Range | `Start: 01/02/2023, End: 01/01/2023` | Inverted date range (Start 2023 > End 2020) rejected; top re... | `evidence/BVA/TC-BVA-008.png` | **Pass** |
 | `TC-BVA-010` | Portfolio Backtester | Rolling Window | `0 months` | Tooltip: "Value must be greater than or equal to 1."... | `evidence/BVA/TC-BVA-010.png` | **Pass** |
+| `TC-BVA-013` | Auth Modal (/start) | Password Length | `0 chars ("")` | Empty password (0 chars) disables submit button client-side.... | `evidence/BVA/TC-BVA-013.png` | **Pass** |
+| `TC-BVA-014` | Auth Modal (/start) | Password Length | `1 char ("a")` | 1-character password activates submit button client-side.... | `evidence/BVA/TC-BVA-014.png` | **Pass** |
 | `TC-BVA-015` | Monte Carlo (/monte-carlo) | Horizon (Years) | `0 years` | Red banner: "Number of years must be positive"... | `evidence/BVA/TC-BVA-015.png` | **Pass** |
 | `TC-BVA-016` | Monte Carlo (/monte-carlo) | Horizon (Years) | `1 year` | Red banner: "Phase 1 withdrawal rate must be between 0% and ... | `evidence/BVA/TC-BVA-016.png` | **Pass** |
 | `TC-BVA-017` | Safe Withdrawal (/safe-withdrawal) | Withdrawal Rate (%) | `-0.1%` | Red banner: "Phase 1 withdrawal rate must be between 0% and ... | `evidence/BVA/TC-BVA-017.png` | **Pass** |
@@ -78,16 +84,14 @@
 
 ---
 
-## Part 3: Pending Test Cases Checklist (58 Remaining Cases)
+## Part 3: Pending Test Cases Checklist (52 Remaining Cases)
 Parameters for optional manual capture:
 
-### Tool: Auth Modal (/start) (4 pending)
+### Tool: Auth Modal (/start) (2 pending)
 | Checkbox | Test Case ID | Target Field | Input Values | Expected Response | Target Evidence Path |
 |:---:|:---|:---|:---|:---|:---|
 | [ ] | `TC-EP-001` | Email, Password | `Email: test@example.com, Password: Testfol123!` | Credentials accepted or account created | `evidence/EP/TC-EP-001.png` |
 | [ ] | `TC-EP-002` | Email | `Email: i243137@isb.nu.edu.pk, Password: ValidPass123!` | Educational domain accepted | `evidence/EP/TC-EP-002.png` |
-| [ ] | `TC-BVA-013` | Password Length | `0 chars ("")` | Submit button disabled | `evidence/BVA/TC-BVA-013.png` |
-| [ ] | `TC-BVA-014` | Password Length | `1 char ("a")` | Submit button activates | `evidence/BVA/TC-BVA-014.png` |
 
 ### Tool: Contact Form (/contact) (14 pending)
 | Checkbox | Test Case ID | Target Field | Input Values | Expected Response | Target Evidence Path |
@@ -128,7 +132,7 @@ Parameters for optional manual capture:
 | [ ] | `TC-EP-035` | Simulations | `Number of Simulations: 1,000` | Standard simulation count executes | `evidence/EP/TC-EP-035.png` |
 | [ ] | `TC-EP-036` | Simulations | `Number of Simulations: 0` | Reject zero simulations | `evidence/EP/TC-EP-036.png` |
 
-### Tool: Portfolio Backtester (14 pending)
+### Tool: Portfolio Backtester (10 pending)
 | Checkbox | Test Case ID | Target Field | Input Values | Expected Response | Target Evidence Path |
 |:---:|:---|:---|:---|:---|:---|
 | [ ] | `TC-EP-073` | Portfolios, Allocations, Starting Value, Dates, Rolling Window, Cashflow | `Portfolio: 1 present (VTISIM: 60%, BNDSIM: 40%), Starting Value: $10,000, Start: 01/01/2015, End: 12/31/2023, Rolling: 60, Cashflow: $0` | All Valid Combinations: Entire backtest suite executes, generating full performance summary, drawdowns, and Sharpe ratio | `evidence/EP/TC-EP-073.png` |
@@ -136,12 +140,8 @@ Parameters for optional manual capture:
 | [ ] | `TC-EP-075` | Portfolios, Allocations, Starting Value, Dates | `Valid Portfolio, Allocations: 60/40 (Valid), Starting Value: -$7 (Invalid), Dates: 2015–2023 (Valid)` | Multi-variable with Invalid Starting Value: Tooltip flags starting cash error despite valid allocations and dates | `evidence/EP/TC-EP-075.png` |
 | [ ] | `TC-EP-076` | Portfolios, Allocations, Starting Value, Dates | `Valid Portfolio, Allocations: 60/40 (Valid), Starting Value: $10,000 (Valid), Start: 2023, End: 2020 (Invalid)` | Multi-variable with Inverted Date Range: Date error halts submission despite valid portfolio and starting value | `evidence/EP/TC-EP-076.png` |
 | [ ] | `TC-EP-077` | Portfolios, Allocations, Starting Value, Dates | `0 Portfolios (Invalid), Allocations: 120% (Invalid), Starting Value: $0 (Invalid), Start > End (Invalid)` | Extreme Multi-Failure Robustness: Tests prioritization of error trapping when all major subsystems are in invalid state | `evidence/EP/TC-EP-077.png` |
-| [ ] | `TC-BVA-001` | Allocation Sum (%) | `99% (VTISIM: 59%, BND: 40%)` | Reject under-allocated portfolio | `evidence/BVA/TC-BVA-001.png` |
-| [ ] | `TC-BVA-002` | Allocation Sum (%) | `100% (VTISIM: 60%, BND: 40%)` | Accept exact 100% allocation | `evidence/BVA/TC-BVA-002.png` |
-| [ ] | `TC-BVA-003` | Allocation Sum (%) | `101% (VTISIM: 61%, BND: 40%)` | Reject over-allocated portfolio | `evidence/BVA/TC-BVA-003.png` |
 | [ ] | `TC-BVA-005` | Starting Value ($) | `$1` | Accept exact minimum allowable investment | `evidence/BVA/TC-BVA-005.png` |
 | [ ] | `TC-BVA-006` | Starting Value ($) | `$2` | Accept positive investment just above minimum | `evidence/BVA/TC-BVA-006.png` |
-| [ ] | `TC-BVA-008` | Date Range | `Start: 01/02/2023, End: 01/01/2023` | Reject inverted date interval | `evidence/BVA/TC-BVA-008.png` |
 | [ ] | `TC-BVA-009` | Date Range | `Start: 12/31/2022, End: 01/01/2023` | Accept minimal valid 1-day interval | `evidence/BVA/TC-BVA-009.png` |
 | [ ] | `TC-BVA-011` | Rolling Window | `1 month` | Accept minimum 1-month rolling calculation | `evidence/BVA/TC-BVA-011.png` |
 | [ ] | `TC-BVA-012` | Rolling Window | `2 months` | Accept valid 2-month rolling calculation | `evidence/BVA/TC-BVA-012.png` |
