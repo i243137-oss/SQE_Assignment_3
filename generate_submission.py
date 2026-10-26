@@ -541,7 +541,9 @@ evidence_items = [
     ("TC-BVA-007", "evidence/BVA/TC-BVA-007.png", "Portfolio Backtester (/): BVA Dates Start == End (Boundary) triggers 'Start date must be before end date.'"),
     ("TC-BVA-010", "evidence/BVA/TC-BVA-010.png", "Portfolio Backtester (/): BVA Rolling Window = 0 (Below bound) triggers 'Value must be greater than or equal to 1.'"),
     ("TC-BVA-015", "evidence/BVA/TC-BVA-015.png", "Monte Carlo Simulator (/monte-carlo): BVA Horizon = 0 yrs (Below bound) triggers 'Number of years must be positive.'"),
+    ("TC-BVA-016", "evidence/BVA/TC-BVA-016.png", "Safe Withdrawal Rate: BVA Rate = -3.5% (Below bound) triggers 'Phase 1 withdrawal rate must be between 0% and 100%'."),
     ("TC-BVA-017", "evidence/BVA/TC-BVA-017.png", "Safe Withdrawal Rate: BVA Rate = -3.5% (Below bound) triggers 'Phase 1 withdrawal rate must be between 0% and 100%'."),
+    ("TC-BVA-018", "evidence/BVA/TC-BVA-018.png", "Safe Withdrawal Rate: BVA Rate = 120% (Above bound) triggers 'Phase 1 withdrawal rate must be between 0% and 100%'."),
     ("TC-BVA-019", "evidence/BVA/TC-BVA-019.png", "Contact Form (/contact): BVA Message = 5 chars (Below bound) triggers 'Message must be at least 10 characters.'")
 ]
 

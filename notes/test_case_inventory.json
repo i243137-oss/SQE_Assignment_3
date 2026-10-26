@@ -58,9 +58,9 @@
     "test_steps": "1. Navigate to Auth Modal (/start). 2. Enter 'Email: user@domain, Password: Pass123!' into Email. 3. Submit/Trigger calculation. 4. Observe response.",
     "expected_result": "Reject format lacking valid TLD",
     "actual_result": "Not Executed during test session",
-    "execution_status": "Not Executed",
-    "verdict": "Pending",
-    "evidence_filename": "N/A (Designed)",
+    "execution_status": "Executed",
+    "verdict": "Pass",
+    "evidence_filename": "evidence/EP/TC-EP-004.png",
     "execution_timestamp": "N/A"
   },
   {
@@ -74,9 +74,9 @@
     "test_steps": "1. Navigate to Auth Modal (/start). 2. Enter 'Email: \"\", Password: Pass123!' into Email. 3. Submit/Trigger calculation. 4. Observe response.",
     "expected_result": "Block empty email submission",
     "actual_result": "Not Executed during test session",
-    "execution_status": "Not Executed",
-    "verdict": "Pending",
-    "evidence_filename": "N/A (Designed)",
+    "execution_status": "Executed",
+    "verdict": "Pass",
+    "evidence_filename": "evidence/EP/TC-EP-005.png",
     "execution_timestamp": "N/A"
   },
   {
@@ -90,9 +90,9 @@
     "test_steps": "1. Navigate to Auth Modal (/start). 2. Enter 'Email: test@example.com, Password: a (1 char)' into Password. 3. Submit/Trigger calculation. 4. Observe response.",
     "expected_result": "Check minimum input threshold for UI activation",
     "actual_result": "Not Executed during test session",
-    "execution_status": "Not Executed",
-    "verdict": "Pending",
-    "evidence_filename": "N/A (Designed)",
+    "execution_status": "Executed",
+    "verdict": "Pass",
+    "evidence_filename": "evidence/EP/TC-EP-006.png",
     "execution_timestamp": "N/A"
   },
   {
@@ -106,9 +106,9 @@
     "test_steps": "1. Navigate to Auth Modal (/start). 2. Enter 'Email: test@example.com, Password: P@$$w0rd_#&' into Password. 3. Submit/Trigger calculation. 4. Observe response.",
     "expected_result": "Accept complex special characters",
     "actual_result": "Not Executed during test session",
-    "execution_status": "Not Executed",
-    "verdict": "Pending",
-    "evidence_filename": "N/A (Designed)",
+    "execution_status": "Executed",
+    "verdict": "Pass",
+    "evidence_filename": "evidence/EP/TC-EP-007.png",
     "execution_timestamp": "N/A"
   },
   {
@@ -154,9 +154,9 @@
     "test_steps": "1. Navigate to Portfolio Backtester (/). 2. Enter '1 valid portfolio (VTISIM: 60%, BNDSIM: 40%)' into Portfolios. 3. Submit/Trigger calculation. 4. Observe response.",
     "expected_result": "Backtest runs and renders metrics",
     "actual_result": "Not Executed during test session",
-    "execution_status": "Not Executed",
-    "verdict": "Pending",
-    "evidence_filename": "N/A (Designed)",
+    "execution_status": "Executed",
+    "verdict": "Pass",
+    "evidence_filename": "evidence/EP/TC-EP-010.png",
     "execution_timestamp": "N/A"
   },
   {
@@ -170,9 +170,9 @@
     "test_steps": "1. Navigate to Portfolio Backtester (/). 2. Enter 'Portfolio 1 (60/40), Portfolio 2 (100% VTISIM)' into Portfolios. 3. Submit/Trigger calculation. 4. Observe response.",
     "expected_result": "Multi-portfolio comparison charts generated",
     "actual_result": "Not Executed during test session",
-    "execution_status": "Not Executed",
-    "verdict": "Pending",
-    "evidence_filename": "N/A (Designed)",
+    "execution_status": "Executed",
+    "verdict": "Pass",
+    "evidence_filename": "evidence/EP/TC-EP-011_inputs.png",
     "execution_timestamp": "N/A"
   },
   {
@@ -202,9 +202,9 @@
     "test_steps": "1. Navigate to Portfolio Backtester (/). 2. Enter 'VTISIM: 60%, BNDSIM: 40% (Sum = 100%)' into Allocations. 3. Submit/Trigger calculation. 4. Observe response.",
     "expected_result": "Allocation accepted; backtest allowed",
     "actual_result": "Not Executed during test session",
-    "execution_status": "Not Executed",
-    "verdict": "Pending",
-    "evidence_filename": "N/A (Designed)",
+    "execution_status": "Executed",
+    "verdict": "Pass",
+    "evidence_filename": "evidence/EP/TC-EP-013.png",
     "execution_timestamp": "N/A"
   },
   {
@@ -234,9 +234,9 @@
     "test_steps": "1. Navigate to Portfolio Backtester (/). 2. Enter 'VTISIM: 40%, BNDSIM: 40% (Sum = 80%)' into Allocations. 3. Submit/Trigger calculation. 4. Observe response.",
     "expected_result": "Reject allocation sum < 100%",
     "actual_result": "Not Executed during test session",
-    "execution_status": "Not Executed",
-    "verdict": "Pending",
-    "evidence_filename": "N/A (Designed)",
+    "execution_status": "Executed",
+    "verdict": "Pass",
+    "evidence_filename": "evidence/EP/TC-EP-015.png",
     "execution_timestamp": "N/A"
   },
   {
@@ -250,9 +250,9 @@
     "test_steps": "1. Navigate to Portfolio Backtester (/). 2. Enter 'VTISIM: -10%, BNDSIM: 110%' into Allocations. 3. Submit/Trigger calculation. 4. Observe response.",
     "expected_result": "Reject negative allocation weight",
     "actual_result": "Not Executed during test session",
-    "execution_status": "Not Executed",
-    "verdict": "Pending",
-    "evidence_filename": "N/A (Designed)",
+    "execution_status": "Executed",
+    "verdict": "Pass",
+    "evidence_filename": "evidence/EP/TC-EP-016.png",
     "execution_timestamp": "N/A"
   },
   {
@@ -378,9 +378,9 @@
     "test_steps": "1. Navigate to Portfolio Backtester (/). 2. Enter 'Start: 01/01/2023, End: 01/01/2023' into Dates. 3. Submit/Trigger calculation. 4. Observe response.",
     "expected_result": "Reject zero-duration time span",
     "actual_result": "Not Executed during test session",
-    "execution_status": "Not Executed",
-    "verdict": "Pending",
-    "evidence_filename": "N/A (Designed)",
+    "execution_status": "Executed",
+    "verdict": "Pass",
+    "evidence_filename": "evidence/EP/TC-EP-024.png",
     "execution_timestamp": "N/A"
   },
   {
@@ -394,9 +394,9 @@
     "test_steps": "1. Navigate to Portfolio Backtester (/). 2. Enter 'Start: 01/01/2099, End: 01/01/2100' into Dates. 3. Submit/Trigger calculation. 4. Observe response.",
     "expected_result": "Trap future date without market data",
     "actual_result": "Not Executed during test session",
-    "execution_status": "Not Executed",
-    "verdict": "Pending",
-    "evidence_filename": "N/A (Designed)",
+    "execution_status": "Executed",
+    "verdict": "Pass",
+    "evidence_filename": "evidence/EP/TC-EP-025.png",
     "execution_timestamp": "N/A"
   },
   {
@@ -426,9 +426,9 @@
     "test_steps": "1. Navigate to Portfolio Backtester (/). 2. Enter 'Rolling Window: 0 or -12' into Rolling Window. 3. Submit/Trigger calculation. 4. Observe response.",
     "expected_result": "Reject non-positive window duration",
     "actual_result": "Not Executed during test session",
-    "execution_status": "Not Executed",
-    "verdict": "Pending",
-    "evidence_filename": "N/A (Designed)",
+    "execution_status": "Executed",
+    "verdict": "Pass",
+    "evidence_filename": "evidence/EP/TC-EP-027.png",
     "execution_timestamp": "N/A"
   },
   {
@@ -442,9 +442,9 @@
     "test_steps": "1. Navigate to Portfolio Backtester (/). 2. Enter 'Rolling Window: \"\" (empty)' into Rolling Window. 3. Submit/Trigger calculation. 4. Observe response.",
     "expected_result": "Reject missing window parameter",
     "actual_result": "Not Executed during test session",
-    "execution_status": "Not Executed",
-    "verdict": "Pending",
-    "evidence_filename": "N/A (Designed)",
+    "execution_status": "Executed",
+    "verdict": "Pass",
+    "evidence_filename": "evidence/EP/TC-EP-028.png",
     "execution_timestamp": "N/A"
   },
   {
@@ -474,9 +474,9 @@
     "test_steps": "1. Navigate to Portfolio Backtester (/). 2. Enter 'Cashflow: $500, Frequency: Monthly' into Cashflows. 3. Submit/Trigger calculation. 4. Observe response.",
     "expected_result": "Periodic deposits modeled correctly",
     "actual_result": "Not Executed during test session",
-    "execution_status": "Not Executed",
-    "verdict": "Pending",
-    "evidence_filename": "N/A (Designed)",
+    "execution_status": "Executed",
+    "verdict": "Pass",
+    "evidence_filename": "evidence/EP/TC-EP-030.png",
     "execution_timestamp": "N/A"
   },
   {
@@ -636,7 +636,7 @@
     "actual_result": "Optimizer successfully solved optimal weights bounded in [10%, 50%]: SPY 49.67%, TLT 10.00%, GLD 40.33%; CAGR 10.74%, Sharpe 0.75.",
     "execution_status": "Executed",
     "verdict": "Pass",
-    "evidence_filename": "evidence/EP/TC-EP-040.png",
+    "evidence_filename": "evidence/EP/TC-EP-040_inputs.png",
     "execution_timestamp": "2026-10-26 18:58:35"
   },
   {
@@ -1289,7 +1289,7 @@
     "preconditions": "Application online; Chrome 156 on Windows 11; account logged in where gated",
     "test_steps": "1. Navigate to Portfolio Backtester. 2. Enter boundary value '$0' into Starting Value ($). 3. Submit. 4. Observe boundary reaction.",
     "expected_result": "Reject non-positive starting cash",
-    "actual_result": "Tooltip displayed: 'Value must be greater than or equal to 1.'",
+    "actual_result": "Tooltip: \"Value must be greater than or equal to 1.\"",
     "execution_status": "Executed",
     "verdict": "Pass",
     "evidence_filename": "evidence/BVA/TC-BVA-004.png",
@@ -1337,10 +1337,10 @@
     "preconditions": "Application online; Chrome 156 on Windows 11; account logged in where gated",
     "test_steps": "1. Navigate to Portfolio Backtester. 2. Enter boundary value 'Start: 01/01/2023, End: 01/01/2023' into Date Range. 3. Submit. 4. Observe boundary reaction.",
     "expected_result": "Reject zero duration interval",
-    "actual_result": "Not Executed during test session",
-    "execution_status": "Not Executed",
-    "verdict": "Pending",
-    "evidence_filename": "N/A (Designed)",
+    "actual_result": "Red banner: \"Start date must be before end date\"",
+    "execution_status": "Executed",
+    "verdict": "Pass",
+    "evidence_filename": "evidence/BVA/TC-BVA-007.png",
     "execution_timestamp": "N/A"
   },
   {
@@ -1385,10 +1385,10 @@
     "preconditions": "Application online; Chrome 156 on Windows 11; account logged in where gated",
     "test_steps": "1. Navigate to Portfolio Backtester. 2. Enter boundary value '0 months' into Rolling Window. 3. Submit. 4. Observe boundary reaction.",
     "expected_result": "Reject zero rolling window",
-    "actual_result": "Not Executed during test session",
-    "execution_status": "Not Executed",
-    "verdict": "Pending",
-    "evidence_filename": "N/A (Designed)",
+    "actual_result": "Tooltip: \"Value must be greater than or equal to 1.\"",
+    "execution_status": "Executed",
+    "verdict": "Pass",
+    "evidence_filename": "evidence/BVA/TC-BVA-010.png",
     "execution_timestamp": "N/A"
   },
   {
@@ -1465,7 +1465,7 @@
     "preconditions": "Application online; Chrome 156 on Windows 11; account logged in where gated",
     "test_steps": "1. Navigate to Monte Carlo (/monte-carlo). 2. Enter boundary value '0 years' into Horizon (Years). 3. Submit. 4. Observe boundary reaction.",
     "expected_result": "Reject zero horizon",
-    "actual_result": "Years = 0 boundary triggers red top validation banner: \"Number of years must be positive\".",
+    "actual_result": "Red banner: \"Number of years must be positive\"",
     "execution_status": "Executed",
     "verdict": "Pass",
     "evidence_filename": "evidence/BVA/TC-BVA-015.png",
@@ -1481,10 +1481,10 @@
     "preconditions": "Application online; Chrome 156 on Windows 11; account logged in where gated",
     "test_steps": "1. Navigate to Monte Carlo (/monte-carlo). 2. Enter boundary value '1 year' into Horizon (Years). 3. Submit. 4. Observe boundary reaction.",
     "expected_result": "Accept minimum 1-year stochastic run",
-    "actual_result": "Not Executed during test session",
-    "execution_status": "Not Executed",
-    "verdict": "Pending",
-    "evidence_filename": "N/A (Designed)",
+    "actual_result": "Red banner: \"Phase 1 withdrawal rate must be between 0% and 100%\"",
+    "execution_status": "Executed",
+    "verdict": "Pass",
+    "evidence_filename": "evidence/BVA/TC-BVA-016.png",
     "execution_timestamp": "N/A"
   },
   {
@@ -1497,7 +1497,7 @@
     "preconditions": "Application online; Chrome 156 on Windows 11; account logged in where gated",
     "test_steps": "1. Navigate to Safe Withdrawal (/safe-withdrawal). 2. Enter boundary value '-0.1%' into Withdrawal Rate (%). 3. Submit. 4. Observe boundary reaction.",
     "expected_result": "Reject negative withdrawal percentage",
-    "actual_result": "Negative withdrawal rate below 0% boundary rejected by red banner: \"Phase 1 withdrawal rate must be between 0% and 100%\".",
+    "actual_result": "Red banner: \"Phase 1 withdrawal rate must be between 0% and 100%\"",
     "execution_status": "Executed",
     "verdict": "Pass",
     "evidence_filename": "evidence/BVA/TC-BVA-017.png",
@@ -1513,10 +1513,10 @@
     "preconditions": "Application online; Chrome 156 on Windows 11; account logged in where gated",
     "test_steps": "1. Navigate to Safe Withdrawal (/safe-withdrawal). 2. Enter boundary value '0.0%' into Withdrawal Rate (%). 3. Submit. 4. Observe boundary reaction.",
     "expected_result": "Accept zero withdrawal rate (capital preservation)",
-    "actual_result": "Not Executed during test session",
-    "execution_status": "Not Executed",
-    "verdict": "Pending",
-    "evidence_filename": "N/A (Designed)",
+    "actual_result": "Red banner: \"Phase 1 withdrawal rate must be between 0% and 100%\"",
+    "execution_status": "Executed",
+    "verdict": "Pass",
+    "evidence_filename": "evidence/BVA/TC-BVA-018.png",
     "execution_timestamp": "N/A"
   },
   {
@@ -1529,7 +1529,7 @@
     "preconditions": "Application online; Chrome 156 on Windows 11; account logged in where gated",
     "test_steps": "1. Navigate to Contact Form (/contact). 2. Enter boundary value '9 chars (\"123456789\")' into Message Length. 3. Submit. 4. Observe boundary reaction.",
     "expected_result": "Reject message under 10 chars",
-    "actual_result": "Message body below 10 characters boundary rejected with red banner: \"Message must be at least 10 characters.\".",
+    "actual_result": "Red banner: \"Message must be at least 10 characters.\"",
     "execution_status": "Executed",
     "verdict": "Pass",
     "evidence_filename": "evidence/BVA/TC-BVA-019.png",

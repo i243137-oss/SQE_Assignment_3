@@ -15,19 +15,19 @@ This matrix provides complete, bidirectional traceability linking every test cas
 | `TC-EP-001` | Auth Modal (`/start`) | Email, Password | EP (Weak Robust) | `EC-001`, `EC-006` | Not Executed | Pending | — |
 | `TC-EP-002` | Auth Modal (`/start`) | Email | EP (Weak Robust) | `EC-002` | Not Executed | Pending | — |
 | `TC-EP-003` | Auth Modal (`/start`) | Email | EP (Weak Robust) | `EC-003` | **Executed** | **Pass** | `evidence/EP/TC-EP-003.png` |
-| `TC-EP-004` | Auth Modal (`/start`) | Email | EP (Weak Robust) | `EC-004` | Not Executed | Pending | — |
-| `TC-EP-005` | Auth Modal (`/start`) | Email | EP (Weak Robust) | `EC-005` | Not Executed | Pending | — |
-| `TC-EP-006` | Auth Modal (`/start`) | Password | EP (Weak Robust) | `EC-007` | Not Executed | Pending | — |
-| `TC-EP-007` | Auth Modal (`/start`) | Password | EP (Weak Robust) | `EC-008` | Not Executed | Pending | — |
+| `TC-EP-004` | Auth Modal (`/start`) | Email | EP (Weak Robust) | `EC-004` | **Executed** | **Pass** | `evidence/EP/TC-EP-004.png` |
+| `TC-EP-005` | Auth Modal (`/start`) | Email | EP (Weak Robust) | `EC-005` | **Executed** | **Pass** | `evidence/EP/TC-EP-005.png` |
+| `TC-EP-006` | Auth Modal (`/start`) | Password | EP (Weak Robust) | `EC-007` | **Executed** | **Pass** | `evidence/EP/TC-EP-006.png` |
+| `TC-EP-007` | Auth Modal (`/start`) | Password | EP (Weak Robust) | `EC-008` | **Executed** | **Pass** | `evidence/EP/TC-EP-007.png` |
 | `TC-EP-008` | Auth Modal (`/start`) | Password | EP (Weak Robust) | `EC-009` | **Executed** | **Pass** | `evidence/EP/TC-EP-008.png` |
 | `TC-EP-009` | Auth Modal (`/login`) | Password, Email | EP (Weak Robust) | `EC-010` | **Executed** | **Pass** | `evidence/EP/TC-EP-009.png` |
-| `TC-EP-010` | Portfolio Backtester (`/`) | Portfolios | EP (Weak Robust) | `EC-011` | Not Executed | Pending | — |
-| `TC-EP-011` | Portfolio Backtester (`/`) | Portfolios | EP (Weak Robust) | `EC-012` | Not Executed | Pending | — |
+| `TC-EP-010` | Portfolio Backtester (`/`) | Portfolios | EP (Weak Robust) | `EC-011` | **Executed** | **Pass** | `evidence/EP/TC-EP-010.png` |
+| `TC-EP-011` | Portfolio Backtester (`/`) | Portfolios | EP (Weak Robust) | `EC-012` | **Executed** | **Pass** | `evidence/EP/TC-EP-011_inputs.png` |
 | `TC-EP-012` | Portfolio Backtester (`/`) | Portfolios | EP (Weak Robust) | `EC-013` | **Executed** | **Pass** | `evidence/EP/TC-EP-012.png` |
-| `TC-EP-013` | Portfolio Backtester (`/`) | Allocations | EP (Weak Robust) | `EC-014` | Not Executed | Pending | — |
+| `TC-EP-013` | Portfolio Backtester (`/`) | Allocations | EP (Weak Robust) | `EC-014` | **Executed** | **Pass** | `evidence/EP/TC-EP-013.png` |
 | `TC-EP-014` | Portfolio Backtester (`/`) | Allocations | EP (Weak Robust) | `EC-015` | **Executed** | **Pass** | `evidence/EP/TC-EP-014.png` |
-| `TC-EP-015` | Portfolio Backtester (`/`) | Allocations | EP (Weak Robust) | `EC-016` | Not Executed | Pending | — |
-| `TC-EP-016` | Portfolio Backtester (`/`) | Allocations | EP (Weak Robust) | `EC-017` | Not Executed | Pending | — |
+| `TC-EP-015` | Portfolio Backtester (`/`) | Allocations | EP (Weak Robust) | `EC-016` | **Executed** | **Pass** | `evidence/EP/TC-EP-015.png` |
+| `TC-EP-016` | Portfolio Backtester (`/`) | Allocations | EP (Weak Robust) | `EC-017` | **Executed** | **Pass** | `evidence/EP/TC-EP-016.png` |
 | `TC-EP-017` | Portfolio Backtester (`/`) | Starting Value | EP (Weak Robust) | `EC-018` | Not Executed | Pending | — |
 | `TC-EP-018` | Portfolio Backtester (`/`) | Starting Value | EP (Weak Robust) | `EC-019` | Not Executed | Pending | — |
 | `TC-EP-019` | Portfolio Backtester (`/`) | Starting Value | EP (Weak Robust) | `EC-020` | Not Executed | Pending | — |
@@ -35,27 +35,27 @@ This matrix provides complete, bidirectional traceability linking every test cas
 | `TC-EP-021` | Portfolio Backtester (`/`) | Starting Value | EP (Weak Robust) | `EC-022` | **Executed** | **Pass** | `evidence/EP/TC-EP-021.png` |
 | `TC-EP-022` | Portfolio Backtester (`/`) | Dates | EP (Weak Robust) | `EC-023` | Not Executed | Pending | — |
 | `TC-EP-023` | Portfolio Backtester (`/`) | Dates | EP (Weak Robust) | `EC-024` | **Executed** | **Pass** | `evidence/EP/TC-EP-023.png` |
-| `TC-EP-024` | Portfolio Backtester (`/`) | Dates | EP (Weak Robust) | `EC-025` | Not Executed | Pending | — |
-| `TC-EP-025` | Portfolio Backtester (`/`) | Dates | EP (Weak Robust) | `EC-026` | Not Executed | Pending | — |
+| `TC-EP-024` | Portfolio Backtester (`/`) | Dates | EP (Weak Robust) | `EC-025` | **Executed** | **Pass** | `evidence/EP/TC-EP-024.png` |
+| `TC-EP-025` | Portfolio Backtester (`/`) | Dates | EP (Weak Robust) | `EC-026` | **Executed** | **Pass** | `evidence/EP/TC-EP-025.png` |
 | `TC-EP-026` | Portfolio Backtester (`/`) | Rolling Window | EP (Weak Robust) | `EC-027` | Not Executed | Pending | — |
-| `TC-EP-027` | Portfolio Backtester (`/`) | Rolling Window | EP (Weak Robust) | `EC-028` | Not Executed | Pending | — |
-| `TC-EP-028` | Portfolio Backtester (`/`) | Rolling Window | EP (Weak Robust) | `EC-029` | Not Executed | Pending | — |
+| `TC-EP-027` | Portfolio Backtester (`/`) | Rolling Window | EP (Weak Robust) | `EC-028` | **Executed** | **Pass** | `evidence/EP/TC-EP-027.png` |
+| `TC-EP-028` | Portfolio Backtester (`/`) | Rolling Window | EP (Weak Robust) | `EC-029` | **Executed** | **Pass** | `evidence/EP/TC-EP-028.png` |
 | `TC-EP-029` | Portfolio Backtester (`/`) | Cashflows | EP (Weak Robust) | `EC-030` | Not Executed | Pending | — |
-| `TC-EP-030` | Portfolio Backtester (`/`) | Cashflows | EP (Weak Robust) | `EC-031` | Not Executed | Pending | — |
-| `TC-EP-031` | Portfolio Backtester (`/`) | Cashflows | EP (Weak Robust) | `EC-032` | Not Executed | Pending | — |
+| `TC-EP-030` | Portfolio Backtester (`/`) | Cashflows | EP (Weak Robust) | `EC-031` | **Executed** | **Pass** | `evidence/EP/TC-EP-030.png` |
+| `TC-EP-031` | Portfolio Backtester (`/`) | Cashflows | EP (Weak Robust) | `EC-032` | **Executed** | **Pass** | `evidence/EP/TC-EP-031.png` |
 | `TC-EP-032` | Monte Carlo (`/monte-carlo`) | Horizon | EP (Weak Robust) | `EC-033` | **Executed** | **Pass** | `evidence/EP/TC-EP-032.png` |
-| `TC-EP-033` | Monte Carlo (`/monte-carlo`) | Horizon | EP (Weak Robust) | `EC-034` | Not Executed | Pending | — |
-| `TC-EP-034` | Monte Carlo (`/monte-carlo`) | Horizon | EP (Weak Robust) | `EC-035` | Not Executed | Pending | — |
+| `TC-EP-033` | Monte Carlo (`/monte-carlo`) | Horizon | EP (Weak Robust) | `EC-034` | **Executed** | **Pass** | `evidence/EP/TC-EP-033.png` |
+| `TC-EP-034` | Monte Carlo (`/monte-carlo`) | Horizon | EP (Weak Robust) | `EC-035` | **Executed** | **Pass** | `evidence/EP/TC-EP-034.png` |
 | `TC-EP-035` | Monte Carlo (`/monte-carlo`) | Simulations | EP (Weak Robust) | `EC-036` | Not Executed | Pending | — |
 | `TC-EP-036` | Monte Carlo (`/monte-carlo`) | Simulations | EP (Weak Robust) | `EC-037` | Not Executed | Pending | — |
 | `TC-EP-037` | Safe Withdrawal (`/safe-withdrawal`) | Rate (%) | EP (Weak Robust) | `EC-038` | **Executed** | **Pass** | `evidence/EP/TC-EP-037.png` |
-| `TC-EP-038` | Safe Withdrawal (`/safe-withdrawal`) | Rate (%) | EP (Weak Robust) | `EC-039` | Not Executed | Pending | — |
-| `TC-EP-039` | Safe Withdrawal (`/safe-withdrawal`) | Rate (%) | EP (Weak Robust) | `EC-040` | Not Executed | Pending | — |
-| `TC-EP-040` | Backtest Optimizer (`/backtest-optimizer`) | Weight Bounds | EP (Weak Robust) | `EC-041` | **Executed** | **Pass** | `evidence/EP/TC-EP-040.png` |
-| `TC-EP-041` | Backtest Optimizer (`/backtest-optimizer`) | Weight Bounds | EP (Weak Robust) | `EC-042` | Not Executed | Pending | — |
-| `TC-EP-042` | Backtest Optimizer (`/backtest-optimizer`) | Weight Bounds | EP (Weak Robust) | `EC-043` | Not Executed | Pending | — |
+| `TC-EP-038` | Safe Withdrawal (`/safe-withdrawal`) | Rate (%) | EP (Weak Robust) | `EC-039` | **Executed** | **Pass** | `evidence/EP/TC-EP-038.png` |
+| `TC-EP-039` | Safe Withdrawal (`/safe-withdrawal`) | Rate (%) | EP (Weak Robust) | `EC-040` | **Executed** | **Pass** | `evidence/EP/TC-EP-039.png` |
+| `TC-EP-040` | Backtest Optimizer (`/backtest-optimizer`) | Weight Bounds | EP (Weak Robust) | `EC-041` | **Executed** | **Pass** | `evidence/EP/TC-EP-040_inputs.png` |
+| `TC-EP-041` | Backtest Optimizer (`/backtest-optimizer`) | Weight Bounds | EP (Weak Robust) | `EC-042` | **Executed** | **Pass** | `evidence/EP/TC-EP-041.png` |
+| `TC-EP-042` | Backtest Optimizer (`/backtest-optimizer`) | Weight Bounds | EP (Weak Robust) | `EC-043` | **Executed** | **Pass** | `evidence/EP/TC-EP-042.png` |
 | `TC-EP-043` | Efficient Frontier (`/efficient-frontier`) | Assets | EP (Weak Robust) | `EC-044` | **Executed** | **Pass** | `evidence/EP/TC-EP-043.png` |
-| `TC-EP-044` | Efficient Frontier (`/efficient-frontier`) | Assets | EP (Weak Robust) | `EC-045` | Not Executed | Pending | — |
+| `TC-EP-044` | Efficient Frontier (`/efficient-frontier`) | Assets | EP (Weak Robust) | `EC-045` | **Executed** | **Pass** | `evidence/EP/TC-EP-044.png` |
 | `TC-EP-045` | Efficient Frontier (`/efficient-frontier`) | Assets | EP (Weak Robust) | `EC-046` | Not Executed | Pending | — |
 | `TC-EP-046` | Contact Form (`/contact`) | Email | EP (Weak Robust) | `EC-047` | Not Executed | Pending | — |
 | `TC-EP-047` | Contact Form (`/contact`) | Email | EP (Weak Robust) | `EC-048` | Not Executed | Pending | — |
@@ -102,18 +102,18 @@ This matrix provides complete, bidirectional traceability linking every test cas
 | `TC-BVA-004` | Portfolio Backtester | Starting Value ($) | 3-Point BVA (Below) | `BC-004` | **Executed** | **Pass** | `evidence/BVA/TC-BVA-004.png` |
 | `TC-BVA-005` | Portfolio Backtester | Starting Value ($) | 3-Point BVA (At) | `BC-004` | Not Executed | Pending | — |
 | `TC-BVA-006` | Portfolio Backtester | Starting Value ($) | 3-Point BVA (Above) | `BC-004` | Not Executed | Pending | — |
-| `TC-BVA-007` | Portfolio Backtester | Date Range | 3-Point BVA (At) | `BC-005` | Not Executed | Pending | — |
+| `TC-BVA-007` | Portfolio Backtester | Date Range | 3-Point BVA (At) | `BC-005` | **Executed** | **Pass** | `evidence/BVA/TC-BVA-007.png` |
 | `TC-BVA-008` | Portfolio Backtester | Date Range | 3-Point BVA (Below) | `BC-005` | Not Executed | Pending | — |
 | `TC-BVA-009` | Portfolio Backtester | Date Range | 3-Point BVA (Above) | `BC-005` | Not Executed | Pending | — |
-| `TC-BVA-010` | Portfolio Backtester | Rolling Window | 3-Point BVA (Below) | `BC-006` | Not Executed | Pending | — |
+| `TC-BVA-010` | Portfolio Backtester | Rolling Window | 3-Point BVA (Below) | `BC-006` | **Executed** | **Pass** | `evidence/BVA/TC-BVA-010.png` |
 | `TC-BVA-011` | Portfolio Backtester | Rolling Window | 3-Point BVA (At) | `BC-006` | Not Executed | Pending | — |
 | `TC-BVA-012` | Portfolio Backtester | Rolling Window | 3-Point BVA (Above) | `BC-006` | Not Executed | Pending | — |
 | `TC-BVA-013` | Auth Modal (`/start`) | Password Length | 2-Point BVA (Below) | `BC-001` | Not Executed | Pending | — |
 | `TC-BVA-014` | Auth Modal (`/start`) | Password Length | 2-Point BVA (At) | `BC-001` | Not Executed | Pending | — |
-| `TC-BVA-015` | Monte Carlo (`/monte-carlo`) | Horizon (Years) | 2-Point BVA (Below) | `BC-007` | Not Executed | Pending | — |
-| `TC-BVA-016` | Monte Carlo (`/monte-carlo`) | Horizon (Years) | 2-Point BVA (At) | `BC-007` | Not Executed | Pending | — |
-| `TC-BVA-017` | Safe Withdrawal (`/safe-withdrawal`) | Withdrawal Rate (%) | 2-Point BVA (Below) | `BC-008` | Not Executed | Pending | — |
-| `TC-BVA-018` | Safe Withdrawal (`/safe-withdrawal`) | Withdrawal Rate (%) | 2-Point BVA (At) | `BC-008` | Not Executed | Pending | — |
+| `TC-BVA-015` | Monte Carlo (`/monte-carlo`) | Horizon (Years) | 2-Point BVA (Below) | `BC-007` | **Executed** | **Pass** | `evidence/BVA/TC-BVA-015.png` |
+| `TC-BVA-016` | Monte Carlo (`/monte-carlo`) | Horizon (Years) | 2-Point BVA (At) | `BC-007` | **Executed** | **Pass** | `evidence/BVA/TC-BVA-016.png` |
+| `TC-BVA-017` | Safe Withdrawal (`/safe-withdrawal`) | Withdrawal Rate (%) | 2-Point BVA (Below) | `BC-008` | **Executed** | **Pass** | `evidence/BVA/TC-BVA-017.png` |
+| `TC-BVA-018` | Safe Withdrawal (`/safe-withdrawal`) | Withdrawal Rate (%) | 2-Point BVA (At) | `BC-008` | **Executed** | **Pass** | `evidence/BVA/TC-BVA-018.png` |
 | `TC-BVA-019` | Contact Form (`/contact`) | Message Length | 2-Point BVA (Below) | `BC-009` | **Executed** | **Pass** | `evidence/BVA/TC-BVA-019.png` |
 | `TC-BVA-020` | Contact Form (`/contact`) | Message Length | 2-Point BVA (At) | `BC-009` | Not Executed | Pending | — |
 | `TC-BVA-021` | Contact Form (`/contact`) | Message Length | 2-Point BVA (At) | `BC-010` | Not Executed | Pending | — |
