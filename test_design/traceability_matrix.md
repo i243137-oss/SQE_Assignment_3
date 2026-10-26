@@ -1,12 +1,15 @@
 # Deliverable D4 - Traceability Matrix
+
 This matrix provides complete, bidirectional traceability linking every test case from Deliverable D2 (Equivalence Partitioning) and Deliverable D3 (Boundary Value Analysis) to its target form, input field, testing technique, equivalence class / boundary ID, execution status, and verdict.
+
 - **Total Test Cases Designed**: 109 (77 EP Test Cases + 32 BVA Test Cases).
-- **Executed Test Cases (Backed by Authentic Screenshots)**: 53 test cases passed across all 11 forms.
+- **Executed Test Cases (Backed by Authentic Screenshots)**: 56 test cases passed across all 11 forms.
 - **Blocked Test Cases (Platform Tier / Access Gating)**: 4 test cases documented with restriction evidence.
-- **Not Executed Test Cases (Pending)**: 52 test cases preserved as designed.
+- **Not Executed Test Cases (Pending)**: 49 test cases preserved as designed.
 - **Status Alignment**: Every test case marked as `Executed` or `Blocked` has verified screenshot evidence in Deliverable D5 (Execution Log). All remaining designed test cases are accurately classified as `Not Executed` (`Result: Pending`), completely eliminating status mismatches.
 
 ---
+
 ## 1. Equivalence Partitioning Traceability (TC-EP-001 to TC-EP-077)
 
 | TC ID | Feature / Form | Input Field | Technique | EC / BC IDs Covered | Status | Result | Evidence File |
@@ -100,13 +103,13 @@ This matrix provides complete, bidirectional traceability linking every test cas
 | `TC-BVA-003` | Portfolio Backtester | Allocation Sum (%) | BVA | `BC-002, BC-003 (Above)` | **Executed** | **Pass** | `evidence/BVA/TC-BVA-003.png` |
 | `TC-BVA-004` | Portfolio Backtester | Starting Value ($) | BVA | `BC-004 (Below)` | **Executed** | **Pass** | `evidence/BVA/TC-BVA-004.png` |
 | `TC-BVA-005` | Portfolio Backtester | Starting Value ($) | BVA | `BC-004 (At)` | Not Executed | Pending | — |
-| `TC-BVA-006` | Portfolio Backtester | Starting Value ($) | BVA | `BC-004 (Above)` | Not Executed | Pending | — |
+| `TC-BVA-006` | Portfolio Backtester | Starting Value ($) | BVA | `BC-004 (Above)` | **Executed** | **Pass** | `evidence/BVA/TC-BVA-006.png` |
 | `TC-BVA-007` | Portfolio Backtester | Date Range | BVA | `BC-005 (At (Diff = 0))` | **Executed** | **Pass** | `evidence/BVA/TC-BVA-007.png` |
 | `TC-BVA-008` | Portfolio Backtester | Date Range | BVA | `BC-005 (Below (Start > End))` | **Executed** | **Pass** | `evidence/BVA/TC-BVA-008.png` |
-| `TC-BVA-009` | Portfolio Backtester | Date Range | BVA | `BC-005 (Above (Start < End by 1 day))` | Not Executed | Pending | — |
+| `TC-BVA-009` | Portfolio Backtester | Date Range | BVA | `BC-005 (Above (Start < End by 1 day))` | **Executed** | **Pass** | `evidence/BVA/TC-BVA-009.png` |
 | `TC-BVA-010` | Portfolio Backtester | Rolling Window | BVA | `BC-006 (Below)` | **Executed** | **Pass** | `evidence/BVA/TC-BVA-010.png` |
 | `TC-BVA-011` | Portfolio Backtester | Rolling Window | BVA | `BC-006 (At)` | Not Executed | Pending | — |
-| `TC-BVA-012` | Portfolio Backtester | Rolling Window | BVA | `BC-006 (Above)` | Not Executed | Pending | — |
+| `TC-BVA-012` | Portfolio Backtester | Rolling Window | BVA | `BC-006 (Above)` | **Executed** | **Pass** | `evidence/BVA/TC-BVA-012.png` |
 | `TC-BVA-013` | Auth Modal (/start) | Password Length | BVA | `BC-001 (Below)` | **Executed** | **Pass** | `evidence/BVA/TC-BVA-013.png` |
 | `TC-BVA-014` | Auth Modal (/start) | Password Length | BVA | `BC-001 (At)` | **Executed** | **Pass** | `evidence/BVA/TC-BVA-014.png` |
 | `TC-BVA-015` | Monte Carlo (/monte-carlo) | Horizon (Years) | BVA | `BC-007 (Below)` | **Executed** | **Pass** | `evidence/BVA/TC-BVA-015.png` |

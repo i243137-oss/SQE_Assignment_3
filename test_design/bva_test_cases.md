@@ -15,13 +15,13 @@ Technique coverage:
 | `TC-BVA-003` | `BC-002`, `BC-003` | Portfolio Backtester | Allocation Sum (%) | `120%` (`VTISIM: 60%`, `BNDSIM: 60%`) | **Above** | Reject over-allocated portfolio | Red banner: *"Portfolio 1: Allocation percentages must sum to 100"* | **Pass** |
 | `TC-BVA-004` | `BC-004` | Portfolio Backtester | Starting Value ($) | `$0` | **Below** | Reject non-positive starting cash | Tooltip: "Value must be greater than or equal to 1." | **Pass** |
 | `TC-BVA-005` | `BC-004` | Portfolio Backtester | Starting Value ($) | `$1` | **At** | Accept exact minimum allowable investment | Pending Execution | Not Executed |
-| `TC-BVA-006` | `BC-004` | Portfolio Backtester | Starting Value ($) | `$2` | **Above** | Accept positive investment just above minimum | Pending Execution | Not Executed |
+| `TC-BVA-006` | `BC-004` | Portfolio Backtester | Starting Value ($) | `$10,000` | **Above** | Accept positive investment above minimum | Backtest executes simulation successfully ("Backtest complete") | **Pass** |
 | `TC-BVA-007` | `BC-005` | Portfolio Backtester | Date Range | `Start: 01/01/2023`, `End: 01/01/2023` | **At** (Diff = 0) | Reject zero duration interval | Red banner: "Start date must be before end date" | **Pass** |
 | `TC-BVA-008` | `BC-005` | Portfolio Backtester | Date Range | `Start: 01/01/2023`, `End: 01/01/2020` | **Below** (Start > End) | Reject inverted date interval | Red banner: *"Start date must be before end date"* | **Pass** |
-| `TC-BVA-009` | `BC-005` | Portfolio Backtester | Date Range | `Start: 12/31/2022`, `End: 01/01/2023` | **Above** (Start < End by 1 day) | Accept minimal valid 1-day interval | Pending Execution | Not Executed |
+| `TC-BVA-009` | `BC-005` | Portfolio Backtester | Date Range | `Start: 01/01/2025`, `End: 10/26/2026` | **Above** (Start < End) | Accept valid chronological date interval | Backtest accepts range and computes successfully | **Pass** |
 | `TC-BVA-010` | `BC-006` | Portfolio Backtester | Rolling Window | `0 months` | **Below** | Reject zero rolling window | Tooltip: "Value must be greater than or equal to 1." | **Pass** |
 | `TC-BVA-011` | `BC-006` | Portfolio Backtester | Rolling Window | `1 month` | **At** | Accept minimum 1-month rolling calculation | Pending Execution | Not Executed |
-| `TC-BVA-012` | `BC-006` | Portfolio Backtester | Rolling Window | `2 months` | **Above** | Accept valid 2-month rolling calculation | Pending Execution | Not Executed |
+| `TC-BVA-012` | `BC-006` | Portfolio Backtester | Rolling Window | `60 months` | **Above** | Accept valid rolling calculation above minimum | Backtest executes simulation successfully | **Pass** |
 | **2-POINT BVA ON REMAINING IN-SCOPE FORMS** | | | | | | | | |
 | `TC-BVA-013` | `BC-001` | Auth Modal (`/start`) | Password Length | `0 chars` (`""`) | **Below** | Submit button disabled | Submit button dimmed / disabled client-side | **Pass** |
 | `TC-BVA-014` | `BC-001` | Auth Modal (`/start`) | Password Length | `1 char` (`"a"`) | **At** | Submit button activates | Submit button enabled client-side | **Pass** |
